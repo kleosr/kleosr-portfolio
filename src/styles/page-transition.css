@@ -1,0 +1,68 @@
+@view-transition {
+  navigation: auto;
+}
+
+html {
+  view-transition-name: root;
+}
+
+.grok-lockup {
+  view-transition-name: grok-lockup;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+  background: #050505;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 350ms;
+  animation-timing-function: cubic-bezier(0.22, 0.8, 0.22, 1);
+  animation-fill-mode: both;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  animation-name: page-out;
+}
+
+::view-transition-new(root) {
+  animation-name: page-in;
+}
+
+::view-transition-group(grok-lockup) {
+  animation-duration: 350ms;
+  animation-timing-function: cubic-bezier(0.22, 0.8, 0.22, 1);
+}
+
+::view-transition-old(grok-lockup),
+::view-transition-new(grok-lockup) {
+  animation-duration: 280ms;
+  animation-timing-function: cubic-bezier(0.22, 0.8, 0.22, 1);
+  height: 100%;
+  overflow: clip;
+}
+
+@keyframes page-out {
+  to {
+    opacity: 0;
+    filter: brightness(0.55);
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    filter: brightness(0.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root),
+  ::view-transition-old(grok-lockup),
+  ::view-transition-new(grok-lockup) {
+    animation: none;
+  }
+}

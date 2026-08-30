@@ -1,0 +1,42 @@
+@media (min-width: 64rem) {
+  .grok-nav,
+  .grok-hero,
+  .grok-crew,
+  .grok-footer {
+    padding-right: max(3rem, calc((100vw - 96rem) / 2));
+    padding-left: max(3rem, calc((100vw - 96rem) / 2));
+  }
+
+  .grok-hero {
+    grid-template-columns: minmax(30rem, 0.9fr) minmax(34rem, 1.1fr);
+    gap: 5rem;
+  }
+
+  .grok-hero-visual {
+    min-height: 44rem;
+  }
+
+  .grok-crew {
+    display: grid;
+    grid-template-columns: minmax(20rem, 0.65fr) minmax(34rem, 1.35fr);
+    gap: 6rem;
+  }
+}
+
+@media (max-width: 39.99rem) {
+  .grok-nav {
+    grid-template-columns: 1fr auto;
+  }
+
+  .grok-nav > span {
+    display: none;
+  }
+
+  .grok-agent-list li {
+    grid-template-columns: 1.5rem minmax(0, 1fr);
+  }
+
+  .grok-agent-list small {
+    grid-column: 2;
+  }
+}

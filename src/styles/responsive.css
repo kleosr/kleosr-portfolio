@@ -1,0 +1,131 @@
+@media (min-width: 40rem) {
+  .hero,
+  .section {
+    padding-inline: max(2rem, calc((100vw - 96rem) / 2));
+  }
+
+  .nav-shell {
+    padding-top: 1.25rem;
+  }
+
+  .nav {
+    padding: 0.35rem 0.4rem 0.35rem 1rem;
+    grid-template-columns: auto 1fr auto;
+    border-radius: 999px;
+  }
+
+  .nav-primary {
+    grid-column: 2;
+    grid-row: 1;
+    border-top: 0;
+  }
+
+  .nav-actions {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .nav-link {
+    padding-inline: 0.85rem;
+    font-size: 0.74rem;
+  }
+
+  .section-heading {
+    grid-template-columns: 6rem minmax(0, 1fr);
+  }
+
+  .tool-copy {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .hero {
+    grid-template-columns: minmax(25rem, 0.8fr) minmax(34rem, 1.2fr);
+    padding-top: 8rem;
+    gap: 4rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(7rem, 11vw, 11rem);
+  }
+
+  .hero-headline {
+    font-size: clamp(2.2rem, 3.5vw, 3.75rem);
+  }
+
+  .hero-visual {
+    margin-right: -3vw;
+  }
+
+  .section {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  .section-heading {
+    margin-bottom: 6rem;
+    grid-template-columns: 8rem minmax(0, 1fr);
+  }
+
+  .tool-list {
+    gap: 2rem;
+  }
+
+  .tool-card {
+    grid-template-columns: minmax(0, 1.35fr) minmax(24rem, 0.65fr);
+    min-height: 36rem;
+  }
+
+  .tool-card:nth-child(even) {
+    grid-template-columns: minmax(24rem, 0.65fr) minmax(0, 1.35fr);
+  }
+
+  .tool-card:nth-child(even) .poster-visual {
+    order: 2;
+  }
+
+  .tool-card:nth-child(even) .tool-copy {
+    order: 1;
+    border-right: 1px solid var(--line-light);
+    border-left: 0;
+  }
+
+  .tool-copy {
+    min-height: auto;
+    padding: 2.75rem;
+    border-top: 0;
+    border-left: 1px solid var(--line-light);
+  }
+
+  .poster-visual {
+    height: 100%;
+    min-height: 36rem;
+    aspect-ratio: auto;
+  }
+
+  .about-body {
+    grid-template-columns: minmax(20rem, 0.65fr) minmax(30rem, 1.35fr);
+    align-items: start;
+    gap: 6rem;
+  }
+
+  .about-copy {
+    padding-top: 1rem;
+  }
+
+  .contact-section {
+    grid-template-columns: 0.55fr 1fr;
+    gap: 4rem;
+  }
+
+  .contact-copy {
+    padding-top: 8rem;
+  }
+}
+
+@media (min-width: 90rem) {
+  .hero-visual {
+    margin-right: 0;
+  }
+}
