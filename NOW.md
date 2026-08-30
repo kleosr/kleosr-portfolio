@@ -11,4 +11,4 @@ Proof
 `pnpm check && pnpm build && pnpm audit` (35 modules, 0 vulns). Browser: 7 `.overlay-canvas` drawn on home; tool plates show tracking boxes and labels. `pnpm dlx surge ./dist kleosr.surge.sh` → kleosr.surge.sh.
 
 Next
-Mario: hard-refresh https://kleosr.surge.sh and scroll Tools plus About.
+Mario: hard-refresh https://kleosr.surge.sh. Git is live at https://github.com/kleosr/kleosr-portfolio.
