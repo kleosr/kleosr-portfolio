@@ -34,19 +34,6 @@ function IconPaths({ name }: { name: IconName }): ReactElement {
           <path className="icon-beam" d="M12 3v18M7 21h10M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
         </>
       );
-    case "theme":
-      return (
-        <>
-          <path
-            className="icon-shell"
-            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.12-.29-.29-.44-.65-.44-1.13A1.64 1.64 0 0 1 14.45 16h2c3.05 0 5.55-2.5 5.55-5.55C22 6.01 17.46 2 12 2z"
-          />
-          <circle className="icon-dot" cx="8.5" cy="7.5" r="1" fill="currentColor" stroke="none" />
-          <circle className="icon-dot" cx="6.5" cy="12" r="1" fill="currentColor" stroke="none" />
-          <circle className="icon-dot" cx="13.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-          <circle className="icon-dot" cx="17.5" cy="10.5" r="1" fill="currentColor" stroke="none" />
-        </>
-      );
     case "arrow":
       return (
         <>

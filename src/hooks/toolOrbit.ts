@@ -50,8 +50,7 @@ export function scrubOrbit(
     },
     scrollTrigger: {
       trigger: section,
-      start: () =>
-        window.matchMedia("(max-width: 39.99rem)").matches ? "top 8.25rem" : "top 5.25rem",
+      start: "top top",
       end: () => `+=${Math.round(window.innerHeight * 3.4)}`,
       pin: true,
       scrub: 0.65,

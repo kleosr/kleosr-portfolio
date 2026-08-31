@@ -1,15 +1,15 @@
 @media (max-width: 39.99rem) {
   .hero,
   .section {
-    scroll-margin-top: 8.25rem;
+    scroll-margin-top: 5.25rem;
   }
 
   .nav {
-    padding: 0.2rem 0.45rem 0.15rem 0.65rem;
+    padding: 0.15rem 0.35rem 0.15rem 0.65rem;
   }
 
   .nav-primary {
-    justify-content: space-evenly;
+    justify-content: flex-end;
   }
 
   .about-body {
@@ -74,14 +74,16 @@
     padding-bottom: 4.5rem;
   }
 
-  .tools-section {
-    min-height: calc(100svh - 8.25rem);
-    padding-top: 1rem;
-    padding-bottom: 0;
+  .section.tools-section {
+    padding-bottom: 0.75rem;
+  }
+
+  .tool-orbit {
+    min-height: 0;
   }
 
   .tools-section .section-heading {
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.55rem;
   }
 
   .section-heading {
@@ -94,22 +96,37 @@
     padding-top: 0.06em;
   }
 
+  .tool-orbit-hold {
+    gap: 1rem;
+    min-height: 0;
+    overflow: hidden;
+  }
+
   .tool-orbit {
-    min-height: 15rem;
-    margin-left: -10%;
+    min-height: 0;
+    margin-left: 0;
   }
 
   .tool-orbit-card {
-    width: min(17.5rem, 72vw);
+    width: min(13.5rem, 58vw);
   }
 
   .tool-header {
     gap: 0.45rem 0.85rem;
   }
 
+  .tool-header h3 {
+    font-size: clamp(1.25rem, 6.4vw, 1.7rem);
+  }
+
   .tool-description,
   .tool-tags {
-    margin-top: 1rem;
+    margin-top: 0.7rem;
+  }
+
+  .tool-source {
+    margin-top: 0.7rem;
+    padding-top: 0.7rem;
   }
 
   .poster-binary {
@@ -154,7 +171,6 @@
   }
 
   .contact-section {
-    min-height: 100svh;
     padding-bottom: max(4.5rem, env(safe-area-inset-bottom));
   }
 

@@ -1,4 +1,4 @@
-export type ToolIcon = "shield" | "memory" | "verify" | "theme";
+export type ToolIcon = "shield" | "memory" | "verify";
 
 export type Tool = {
   number: string;
@@ -65,22 +65,6 @@ export const tools: readonly Tool[] = [
       code: ['"valid": true', '"risk": "low"', '"exit": 0'],
     },
     href: "https://github.com/kleosr/veredicto",
-  },
-  {
-    number: "04",
-    name: "orangesor",
-    year: 2025,
-    description: "Dark editor theme with warm orange accents. Readable diffs, calm nights.",
-    tags: ["Theme", "VS Code", "JSON"],
-    icon: "theme",
-    visual: {
-      src: "/images/tool-orangesor-column.png",
-      alt: "Greek columns intersected by orange editor diff lines",
-      agent: "AGENT_04",
-      status: "THEME / LOADED",
-      code: ["+ readable diff", "- visual noise", "night: calm"],
-    },
-    href: "https://github.com/kleosr/orangesor-cursortheme",
   },
 ];
 

@@ -31,10 +31,8 @@
     grid-template-columns: 6rem minmax(0, 1fr);
   }
 
-  .tools-section {
-    min-height: calc(100svh - 5.25rem);
-    padding-top: 2rem;
-    padding-bottom: 0;
+  .section.tools-section {
+    padding-bottom: 1.25rem;
   }
 
   .tools-section .section-heading {
@@ -91,9 +89,9 @@
     padding-bottom: 10rem;
   }
 
-  .tools-section {
-    padding-top: 2.25rem;
-    padding-bottom: 0;
+  .section.tools-section {
+    padding-top: 5.25rem;
+    padding-bottom: 1.5rem;
   }
 
   .section-heading {

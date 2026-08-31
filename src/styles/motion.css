@@ -70,10 +70,6 @@
   .tool-title:hover .animated-icon-verify .icon-beam {
     transform: rotate(6deg);
   }
-
-  .tool-title:hover .animated-icon-theme .icon-shell {
-    transform: rotate(-8deg);
-  }
 }
 
 .poster-agent i {

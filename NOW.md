@@ -1,14 +1,14 @@
 Now
-Tools orbit plus still Grok plates. Dock is icon, number, title link, description, orange tags, Open source.
+Orangesor is gone. Tools/About spacing is on `main` and Surge.
 
 State
-Four tools on a GSAP pin. Plates are not links. Title and Open source go to GitHub. Tags are translucent orange. Grok hero/bay use `chrome="still"`.
+Three tools. Pin is `top top`. Tools is `100svh` full-bleed. About is `100svh` cream. Contact sizes to copy.
 
 Limits
-Commit is on local `main`. Live Surge updates after this commit. cursor-ide-browser MCP was unavailable this pass.
+`origin/main` should be this commit after push.
 
 Proof
-`pnpm check` exit 0. Puppeteer: cards are `DIV`s, title parent is `H3`, tags `rgba(232, 90, 42, 0.36)`.
+`pnpm build` exit 0 (45 modules). CSS is `main-Bn9oxak0.css`.
 
 Next
-Mario: hard-refresh https://kleosr.surge.sh after the deploy. Say if GitHub `main` should get a push.
+Mario: hard-refresh https://kleosr.surge.sh and confirm orangesor is gone.

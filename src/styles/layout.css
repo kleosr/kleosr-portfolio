@@ -159,16 +159,20 @@ main {
   letter-spacing: 0.1em;
 }
 
-.tools-section {
+.section.tools-section {
   display: flex;
-  overflow-x: clip;
-  overflow-y: hidden;
-  min-height: calc(100svh - 5.25rem);
+  isolation: isolate;
+  overflow: hidden;
+  height: 100svh;
+  max-height: 100svh;
+  min-height: 0;
+  width: 100%;
   max-width: none;
-  padding-top: 1.75rem;
-  padding-bottom: 0;
+  padding-top: 5.25rem;
+  padding-bottom: 1rem;
   padding-inline: max(1.25rem, calc((100vw - 96rem) / 2));
   flex-direction: column;
+  justify-content: flex-start;
   background: var(--black);
   color: var(--cream);
 }

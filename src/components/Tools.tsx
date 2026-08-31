@@ -45,7 +45,7 @@ export function Tools(): ReactElement {
         <p>01 / INDEX</p>
         <div>
           <h2 id="tools-title">Tools</h2>
-          <span className="section-code">KLSR.PUBLIC_WORK / 0004</span>
+          <span className="section-code">KLSR.PUBLIC_WORK / 0003</span>
         </div>
       </header>
       <div className="tool-orbit-hold">

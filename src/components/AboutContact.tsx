@@ -27,14 +27,14 @@ export function AboutContact(): ReactElement {
             <small>01001011<br />01001100<br />01000101<br />01001111</small>
           </div>
           <div className="about-copy">
-            <p className="about-type" data-type="Four public tools.">
-              Four public tools.
+            <p className="about-type" data-type="Three public tools.">
+              Three public tools.
             </p>
             <p data-reveal>I am kleosr. I am a Cursor Ambassador.</p>
             <p data-reveal>
               I care about agents that remember the project, stay inside the repo, and do not wreck
-              the tree. The public work is hooks, scope files, session memory, a TypeScript checker
-              that answers in JSON, and themes for long nights.
+              the tree. The public work is hooks, scope files, session memory, and a TypeScript
+              checker that answers in JSON.
             </p>
             <p data-reveal>
               When I am not in the editor I am still in the same problem: make the next session

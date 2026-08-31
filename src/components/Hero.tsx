@@ -29,7 +29,7 @@ export function Hero(): ReactElement {
           Tools for Cursor sessions that have to live in a real repo.
         </p>
         <p className="hero-support" data-reveal>
-          Harnesses, checkers, and themes for people who run agents in a real repo, not a demo.
+          Harnesses and checkers for people who run agents in a real repo, not a demo.
         </p>
       </div>
 

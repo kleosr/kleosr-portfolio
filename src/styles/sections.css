@@ -1,11 +1,16 @@
-.about-section,
-.contact-section {
+.section.about-section,
+.section.contact-section {
+  width: 100%;
   max-width: none;
   padding-inline: max(1.25rem, calc((100vw - 96rem) / 2));
 }
 
 .about-section {
+  display: flex;
   overflow: hidden;
+  min-height: 100svh;
+  flex-direction: column;
+  justify-content: center;
   background: var(--cream);
   color: var(--ink);
 }
@@ -142,7 +147,6 @@
 
 .contact-section {
   display: grid;
-  min-height: 90svh;
   align-content: start;
   background: var(--orange);
   color: var(--black);
