@@ -9,7 +9,7 @@ export function GrokLink({
   shared?: boolean;
 }): ReactElement {
   return (
-    <a className={className} href="/grok-bot/">
+    <a className={className} href="/grok-bot/" aria-label="Grok Bot">
       <span className={shared ? "grok-lockup" : undefined}>
         <GrokLogo className="grok-link-logo" />
         Grok Bot

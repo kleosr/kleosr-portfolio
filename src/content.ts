@@ -1,4 +1,4 @@
-export type ToolIcon = "shield" | "memory" | "verify" | "theme" | "research";
+export type ToolIcon = "shield" | "memory" | "verify" | "theme";
 
 export type Tool = {
   number: string;
@@ -14,7 +14,7 @@ export type Tool = {
     status: string;
     code: readonly string[];
   };
-  href?: string;
+  href: string;
 };
 
 export const tools: readonly Tool[] = [
@@ -23,7 +23,7 @@ export const tools: readonly Tool[] = [
     name: "cursordoctrine",
     year: 2026,
     description: "Ten Cursor hooks for doctrine, scope, shell guards, and a final review.",
-    tags: ["Hooks", "Author", "JavaScript", "Cursor hooks"],
+    tags: ["Hooks", "JavaScript", "Cursor"],
     icon: "shield",
     visual: {
       src: "/images/tool-doctrine-guardian.png",
@@ -39,7 +39,7 @@ export const tools: readonly Tool[] = [
     name: "cursorkleosr",
     year: 2026,
     description: "Local skill plus two markdown files for project facts and live task state.",
-    tags: ["Memory", "Author", "Markdown", "Cursor skill"],
+    tags: ["Memory", "Markdown", "Cursor"],
     icon: "memory",
     visual: {
       src: "/images/tool-memory-bust.png",
@@ -54,9 +54,8 @@ export const tools: readonly Tool[] = [
     number: "03",
     name: "veredicto",
     year: 2026,
-    description:
-      "TypeScript checker for agents. Candidate patches in, JSON verdicts out. Install with npm install -g veredicto.",
-    tags: ["Verification", "Author", "TypeScript", "Node"],
+    description: "TypeScript checker. Patches in, JSON verdicts out.",
+    tags: ["Verification", "TypeScript", "Node"],
     icon: "verify",
     visual: {
       src: "/images/tool-veredicto-judge.png",
@@ -71,8 +70,8 @@ export const tools: readonly Tool[] = [
     number: "04",
     name: "orangesor",
     year: 2025,
-    description: "Dark editor theme with warm orange accents. Readable diffs, calm nights. On VSX.",
-    tags: ["Theme", "Author", "VS Code theme", "JSON"],
+    description: "Dark editor theme with warm orange accents. Readable diffs, calm nights.",
+    tags: ["Theme", "VS Code", "JSON"],
     icon: "theme",
     visual: {
       src: "/images/tool-orangesor-column.png",
@@ -82,21 +81,6 @@ export const tools: readonly Tool[] = [
       code: ["+ readable diff", "- visual noise", "night: calm"],
     },
     href: "https://github.com/kleosr/orangesor-cursortheme",
-  },
-  {
-    number: "05",
-    name: "Semantic Intent",
-    year: 2026,
-    description: "Preprint on keeping developer intent when LLM tools rewrite code. No new benchmarks.",
-    tags: ["Research", "Author", "Preprint"],
-    icon: "research",
-    visual: {
-      src: "/images/tool-semantic-geometry.png",
-      alt: "Classical scholar inside a geometric research construction",
-      agent: "AGENT_05",
-      status: "INTENT / RETAINED",
-      code: ["input: intent", "rewrite: bounded", "output: faithful"],
-    },
   },
 ];
 

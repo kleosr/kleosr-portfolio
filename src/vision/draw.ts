@@ -111,12 +111,26 @@ function strokeBoxes(
     ctx.lineTo(left, top + boxHeight);
     ctx.lineTo(left, top + boxHeight - corner);
     ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(left + boxWidth, top + 8);
-    ctx.lineTo(left + boxWidth + 13, top + 8);
-    ctx.stroke();
-    ctx.fillText(`B${String(box.id).padStart(2, "0")}  ${box.confidence.toFixed(2)}`, left + boxWidth + 5, top - 5);
+    strokeBoxLabel(ctx, left, top, boxWidth, width, box.id, box.confidence);
   }
+}
+
+function strokeBoxLabel(
+  ctx: CanvasRenderingContext2D,
+  left: number,
+  top: number,
+  boxWidth: number,
+  width: number,
+  id: number,
+  confidence: number,
+): void {
+  const labelX = left + boxWidth + 5;
+  if (labelX + 52 > width) return;
+  ctx.beginPath();
+  ctx.moveTo(left + boxWidth, top + 8);
+  ctx.lineTo(left + boxWidth + 13, top + 8);
+  ctx.stroke();
+  ctx.fillText(`B${String(id).padStart(2, "0")}  ${confidence.toFixed(2)}`, labelX, top - 5);
 }
 
 function fillLabels(

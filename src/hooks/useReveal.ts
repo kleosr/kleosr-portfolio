@@ -10,6 +10,7 @@ export function useReveal(): void {
       return () => window.clearTimeout(readyTimer);
     }
 
+    const mobile = window.matchMedia("(max-width: 39.99rem)").matches;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -18,7 +19,10 @@ export function useReveal(): void {
           observer.unobserve(entry.target);
         });
       },
-      { rootMargin: "0px 0px -10%", threshold: 0.12 },
+      {
+        rootMargin: mobile ? "0px 0px -6%" : "0px 0px -10%",
+        threshold: mobile ? 0.06 : 0.12,
+      },
     );
 
     elements.forEach((element) => observer.observe(element));

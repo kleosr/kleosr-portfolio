@@ -6,17 +6,12 @@
   overflow: visible;
 }
 
-.button .animated-icon {
-  width: 1rem;
-  height: 1rem;
-  margin-left: 0.75rem;
-}
-
 .tool-title {
   display: flex;
   min-width: 0;
-  align-items: flex-start;
-  gap: 0.8rem;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 0.7rem;
 }
 
 .tool-title > .animated-icon {
@@ -35,68 +30,50 @@
     stroke-dashoffset var(--duration) var(--ease);
 }
 
-.icon-mark,
 .icon-arrow-line,
-.icon-arrow-head,
-.icon-needle {
+.icon-arrow-head {
   stroke-dasharray: 24;
   stroke-dashoffset: 0;
 }
 
-.button:hover .icon-arrow-line,
-.button:focus-visible .icon-arrow-line,
-.contact-copy a:hover .icon-arrow-line,
+.contact-copy a:active .icon-arrow-line,
 .contact-copy a:focus-visible .icon-arrow-line {
   transform: translateX(2px);
 }
 
-.button:hover .icon-arrow-head,
-.button:focus-visible .icon-arrow-head,
-.contact-copy a:hover .icon-arrow-head,
+.contact-copy a:active .icon-arrow-head,
 .contact-copy a:focus-visible .icon-arrow-head {
   transform: translateX(3px);
 }
 
-.tool-card:hover .animated-icon-shield .icon-shell,
-.tool-card:focus-visible .animated-icon-shield .icon-shell {
-  transform: scale(1.05);
+.tool-orbit-card:focus-visible {
+  border-color: var(--orange);
 }
 
-.tool-card:hover .animated-icon-shield .icon-mark,
-.tool-card:focus-visible .animated-icon-shield .icon-mark,
-.tool-card:hover .animated-icon-verify .icon-mark,
-.tool-card:focus-visible .animated-icon-verify .icon-mark {
-  animation: draw-mark var(--duration) var(--ease);
-}
+@media (hover: hover) and (pointer: fine) {
+  .contact-copy a:hover .icon-arrow-line {
+    transform: translateX(2px);
+  }
 
-.tool-card:hover .animated-icon-memory .icon-orbit,
-.tool-card:focus-visible .animated-icon-memory .icon-orbit {
-  transform: rotate(22deg);
-}
+  .contact-copy a:hover .icon-arrow-head {
+    transform: translateX(3px);
+  }
 
-.tool-card:hover .animated-icon-memory .icon-orbit-y,
-.tool-card:focus-visible .animated-icon-memory .icon-orbit-y {
-  transform: rotate(-22deg);
-}
+  .tool-title:hover .animated-icon-shield .icon-spine {
+    transform: translateY(1px);
+  }
 
-.tool-card:hover .animated-icon-verify .icon-bracket:first-child,
-.tool-card:focus-visible .animated-icon-verify .icon-bracket:first-child {
-  transform: translateX(-1px);
-}
+  .tool-title:hover .animated-icon-memory .icon-back {
+    transform: translate(-1px, 1px);
+  }
 
-.tool-card:hover .animated-icon-theme .icon-scan,
-.tool-card:focus-visible .animated-icon-theme .icon-scan {
-  animation: scan-column 900ms var(--ease);
-}
+  .tool-title:hover .animated-icon-verify .icon-beam {
+    transform: rotate(6deg);
+  }
 
-.tool-card:hover .animated-icon-research .icon-orbit,
-.tool-card:focus-visible .animated-icon-research .icon-orbit {
-  transform: rotate(45deg);
-}
-
-.tool-card:hover .animated-icon-research .icon-needle,
-.tool-card:focus-visible .animated-icon-research .icon-needle {
-  transform: rotate(90deg);
+  .tool-title:hover .animated-icon-theme .icon-shell {
+    transform: rotate(-8deg);
+  }
 }
 
 .poster-agent i {
@@ -108,53 +85,12 @@
   transition: transform var(--duration) var(--ease);
 }
 
-.tool-card:hover .poster-code span:nth-child(1),
-.tool-card:focus-visible .poster-code span:nth-child(1) {
-  transform: translateX(3px);
-}
-
-.tool-card:hover .poster-code span:nth-child(2),
-.tool-card:focus-visible .poster-code span:nth-child(2) {
-  transform: translateX(6px);
-}
-
-.tool-card:hover .poster-code span:nth-child(3),
-.tool-card:focus-visible .poster-code span:nth-child(3) {
-  transform: translateX(9px);
-}
-
 .contact-copy .animated-icon {
   display: inline-block;
   width: 0.72em;
   height: 0.72em;
   margin-left: 0.15em;
   vertical-align: -0.02em;
-}
-
-@keyframes draw-mark {
-  from {
-    stroke-dashoffset: 24;
-  }
-
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes scan-column {
-  0% {
-    transform: translateY(-4px);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(4px);
-    opacity: 0;
-  }
 }
 
 @keyframes agent-signal {
@@ -167,4 +103,3 @@
     transform: scaleX(1);
   }
 }
-

@@ -34,10 +34,10 @@ const LINES: OverlayConnection[] = [
 ];
 
 const LABELS: OverlayLabel[] = [
-  { x: 0.2, y: 0.14, text: "IDX 003", align: "left" },
-  { x: 0.44, y: 0.3, text: "S .86", align: "left" },
-  { x: 0.86, y: 0.32, text: "A07", align: "right" },
-  { x: 0.8, y: 0.72, text: "C .91", align: "right" },
+  { x: 0.16, y: 0.16, text: "IDX 003", align: "left" },
+  { x: 0.4, y: 0.36, text: "S .86", align: "left" },
+  { x: 0.7, y: 0.3, text: "A07", align: "right" },
+  { x: 0.7, y: 0.62, text: "C .91", align: "right" },
 ];
 
 const BRACKETS: OverlayBracket[] = [
@@ -47,8 +47,8 @@ const BRACKETS: OverlayBracket[] = [
 ];
 
 const BOXES: OverlayBox[] = [
-  { id: 1, x: 0.08, y: 0.1, width: 0.4, height: 0.78, confidence: 0.84 },
-  { id: 2, x: 0.52, y: 0.24, width: 0.4, height: 0.52, confidence: 0.77 },
+  { id: 1, x: 0.1, y: 0.14, width: 0.34, height: 0.64, confidence: 0.84 },
+  { id: 2, x: 0.48, y: 0.28, width: 0.34, height: 0.44, confidence: 0.77 },
 ];
 
 function drift(time: number, index: number, amount: number, seed: number): number {

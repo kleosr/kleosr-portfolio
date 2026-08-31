@@ -1,5 +1,4 @@
 import type { ReactElement } from "react";
-import { githubUrl } from "../content";
 import { useActiveSection } from "../hooks/useActiveSection";
 import { GrokLink } from "./GrokLink";
 
@@ -29,12 +28,7 @@ export function Nav(): ReactElement {
               {link.label}
             </a>
           ))}
-        </div>
-        <div className="nav-actions">
           <GrokLink className="nav-link nav-grok" shared />
-          <a className="nav-link nav-github" href={githubUrl} target="_blank" rel="noreferrer">
-            GitHub
-          </a>
         </div>
       </nav>
     </header>

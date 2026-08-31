@@ -32,20 +32,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition:
-    opacity var(--duration-stage) ease,
-    filter var(--duration-fade) ease;
-}
-
-body.is-ready .poster-visual img {
-  opacity: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .poster-visual img {
-    opacity: 1;
-  }
 }
 
 .poster-agent {
@@ -140,18 +126,4 @@ body.is-ready .poster-visual img {
   border: 1px solid var(--ink);
   border-radius: 4px;
   box-shadow: 1rem 1rem 0 var(--orange);
-}
-
-.tool-card:nth-child(even) .poster-agent {
-  background: var(--navy);
-  color: var(--cream);
-}
-
-.tool-card:nth-child(even) .poster-agent i {
-  background: var(--orange);
-}
-
-.tool-card:nth-child(5) .poster-agent {
-  background: var(--purple);
-  color: var(--cream);
 }

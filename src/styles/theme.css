@@ -9,9 +9,25 @@
 @font-face {
   font-family: "Manrope";
   font-style: normal;
-  font-weight: 500 700;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/manrope-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
   font-display: swap;
   src: url("/fonts/manrope-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/manrope-latin-700.woff2") format("woff2");
 }
 
 :root {
@@ -29,10 +45,16 @@
   --navy: #071b32;
   --purple: #24152f;
   --muted-light: rgb(244 236 217 / 62%);
-  --muted-dark: rgb(18 17 15 / 62%);
+  --muted-dark: rgb(18 17 15 / 78%);
   --line-light: rgb(244 236 217 / 16%);
   --line-dark: rgb(18 17 15 / 18%);
   --mono: "SFMono-Regular", "Cascadia Code", "Roboto Mono", ui-monospace, monospace;
+  --type-kicker: 0.6875rem;
+  --type-body: 1.0625rem;
+  --type-lead: clamp(1.25rem, 2.8vw, 1.75rem);
+  --type-title: clamp(1.35rem, 4vw, 2.75rem);
+  --type-display: clamp(2.75rem, 9vw, 5.5rem);
+  --type-hero: clamp(3.4rem, 16vw, 9rem);
   --ease: cubic-bezier(0.22, 0.8, 0.22, 1);
   --duration: 280ms;
   --duration-stage: 350ms;
@@ -44,15 +66,20 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  overflow-x: clip;
   scrollbar-color: var(--orange) var(--black);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
-  overflow-x: hidden;
   background: var(--black);
   color: var(--cream);
   font-size: 16px;
@@ -68,6 +95,7 @@ a {
 a,
 button {
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 a:focus-visible,
@@ -104,7 +132,7 @@ button:focus-visible {
 
 .grain {
   position: fixed;
-  z-index: 90;
+  z-index: 70;
   inset: 0;
   opacity: 0.045;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E");
@@ -119,6 +147,9 @@ button:focus-visible {
   left: 0;
   width: 100%;
   padding: 0.75rem;
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+  padding-right: max(0.75rem, env(safe-area-inset-right));
+  padding-left: max(0.75rem, env(safe-area-inset-left));
   pointer-events: none;
 }
 
@@ -130,7 +161,7 @@ button:focus-visible {
   grid-template-columns: auto 1fr;
   align-items: center;
   border: 1px solid rgb(244 236 217 / 20%);
-  border-radius: 1rem;
+  border-radius: 6px;
   background: rgb(9 9 9 / 92%);
   box-shadow: 0 1rem 3rem rgb(0 0 0 / 22%);
   backdrop-filter: blur(16px);
@@ -143,30 +174,24 @@ button:focus-visible {
   min-width: 2.75rem;
   min-height: 2.75rem;
   align-items: center;
-  color: var(--orange);
+  color: var(--cream);
   font-size: 0.92rem;
   font-weight: 700;
   letter-spacing: -0.04em;
 }
 
-.nav-primary,
-.nav-actions {
-  display: flex;
-  min-width: 0;
-  align-items: center;
+.nav-logo span {
+  color: var(--orange);
 }
 
 .nav-primary {
+  display: flex;
+  min-width: 0;
   grid-column: 1 / -1;
   grid-row: 2;
+  align-items: center;
   justify-content: center;
   border-top: 1px solid rgb(244 236 217 / 12%);
-}
-
-.nav-actions {
-  grid-column: 2;
-  grid-row: 1;
-  justify-content: flex-end;
 }
 
 .nav-link {
@@ -193,19 +218,20 @@ button:focus-visible {
   transition: transform var(--duration) var(--ease);
 }
 
-.nav-link:hover,
-.nav-link.is-active {
+.nav-link.is-active,
+.nav-link:focus-visible,
+.nav-link:active {
   color: var(--cream);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-link:hover {
+    color: var(--cream);
+  }
 }
 
 .nav-link.is-active::after {
   transform: scaleX(1);
-}
-
-.nav-github {
-  margin-left: 0.15rem;
-  border: 1px solid rgb(244 236 217 / 22%);
-  border-radius: 999px;
 }
 
 .nav-grok {
@@ -213,8 +239,7 @@ button:focus-visible {
   color: var(--orange);
 }
 
-.nav-grok > span,
-.button-grok > span {
+.nav-grok > span {
   display: inline-flex;
   align-items: center;
   gap: inherit;

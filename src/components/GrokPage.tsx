@@ -1,18 +1,9 @@
 import type { ReactElement } from "react";
+import { grokAgents, grokBayVisual, grokHeroVisual } from "../grok-content";
 import { useReveal } from "../hooks/useReveal";
 import { GrokLogo } from "./GrokLogo";
 import { HomeLink } from "./HomeLink";
-import { VisionOverlay } from "./VisionOverlay";
-
-const agents = [
-  ["01", "Chief of Staff", "Routes the mission and owns every handoff.", "COMMAND"],
-  ["02", "CTO", "Sets technical direction, standards, and security.", "VECTOR"],
-  ["03", "Principal Architect", "Defines boundaries before implementation begins.", "FLIGHT"],
-  ["04", "Lead Engineer", "Builds the work and keeps the repository healthy.", "BUILD"],
-  ["05", "QA / Bug Hunter", "Finds regressions and proves the repair.", "VERIFY"],
-  ["06", "Product Designer", "Shapes the interaction and visual system.", "DESIGN"],
-  ["07", "DevOps", "Keeps builds, releases, and environments reliable.", "LAUNCH"],
-] as const;
+import { PosterVisual } from "./PosterVisual";
 
 export function GrokPage(): ReactElement {
   useReveal();
@@ -37,7 +28,7 @@ export function GrokPage(): ReactElement {
           <div className="grok-hero-copy">
             <p className="grok-status" data-reveal>
               <i />
-              Systems online. Public controls in progress.
+              Public controls in progress.
             </p>
             <div className="grok-mark grok-lockup" data-reveal>
               <GrokLogo className="grok-hero-logo" />
@@ -53,17 +44,7 @@ export function GrokPage(): ReactElement {
           </div>
 
           <figure className="grok-hero-visual" data-reveal>
-            <img
-              src="/images/kleosr-hero-guardian.png"
-              alt="A Roman guardian riding toward an agent command terminal"
-              width="1536"
-              height="1024"
-            />
-            <VisionOverlay seed={7} />
-            <figcaption>
-              <span>MISSION / KLSR-07</span>
-              <strong>HEAVY WORK / DELEGATED</strong>
-            </figcaption>
+            <PosterVisual visual={grokHeroVisual} index="PLATE / GB" priority chrome="still" />
           </figure>
         </section>
 
@@ -73,8 +54,11 @@ export function GrokPage(): ReactElement {
             <h2 id="crew-title">Seven agents. Clear ownership.</h2>
             <span>The bay is open. Interactive controls come next.</span>
           </header>
+          <figure className="grok-crew-visual" data-reveal>
+            <PosterVisual visual={grokBayVisual} index="PLATE / BAY" chrome="still" />
+          </figure>
           <ol className="grok-agent-list">
-            {agents.map(([number, name, role, channel]) => (
+            {grokAgents.map(([number, name, role, channel]) => (
               <li key={number} data-reveal>
                 <span>{number}</span>
                 <div>

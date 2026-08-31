@@ -8,38 +8,43 @@ function IconPaths({ name }: { name: IconName }): ReactElement {
     case "shield":
       return (
         <>
-          <path className="icon-shell" d="M12 3 19 6v5c0 4.8-2.8 8-7 10-4.2-2-7-5.2-7-10V6l7-3Z" />
-          <path className="icon-mark" d="m8.5 12 2.2 2.2 4.8-5" />
+          <path className="icon-spine" d="M12 7v14" />
+          <path
+            className="icon-shell"
+            d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+          />
         </>
       );
     case "memory":
       return (
         <>
-          <circle className="icon-shell" cx="12" cy="12" r="3.5" />
-          <path className="icon-orbit" d="M3 12c0-2.5 4-4.5 9-4.5s9 2 9 4.5-4 4.5-9 4.5-9-2-9-4.5Z" />
-          <path className="icon-orbit icon-orbit-y" d="M12 3c2.5 0 4.5 4 4.5 9s-2 9-4.5 9-4.5-4-4.5-9S9.5 3 12 3Z" />
+          <path className="icon-fold" d="M20 7h-3a2 2 0 0 1-2-2V2" />
+          <path
+            className="icon-shell"
+            d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z"
+          />
+          <path className="icon-back" d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8" />
         </>
       );
     case "verify":
       return (
         <>
-          <path className="icon-bracket" d="M8 4H5v16h3M16 4h3v16h-3" />
-          <path className="icon-mark" d="m8.5 12 2.2 2.2 4.8-5" />
+          <path className="icon-pan" d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+          <path className="icon-pan" d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+          <path className="icon-beam" d="M12 3v18M7 21h10M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
         </>
       );
     case "theme":
       return (
         <>
-          <path className="icon-shell" d="M5 20h14M7 18h10M8 7v11M12 7v11M16 7v11M6 5h12L12 2 6 5Z" />
-          <path className="icon-scan" d="M4 12h16" />
-        </>
-      );
-    case "research":
-      return (
-        <>
-          <circle className="icon-shell" cx="12" cy="12" r="8" />
-          <path className="icon-orbit" d="M12 2v20M2 12h20" />
-          <path className="icon-needle" d="m14.8 9.2-1.6 4-4 1.6 1.6-4 4-1.6Z" />
+          <path
+            className="icon-shell"
+            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.12-.29-.29-.44-.65-.44-1.13A1.64 1.64 0 0 1 14.45 16h2c3.05 0 5.55-2.5 5.55-5.55C22 6.01 17.46 2 12 2z"
+          />
+          <circle className="icon-dot" cx="8.5" cy="7.5" r="1" fill="currentColor" stroke="none" />
+          <circle className="icon-dot" cx="6.5" cy="12" r="1" fill="currentColor" stroke="none" />
+          <circle className="icon-dot" cx="13.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+          <circle className="icon-dot" cx="17.5" cy="10.5" r="1" fill="currentColor" stroke="none" />
         </>
       );
     case "arrow":

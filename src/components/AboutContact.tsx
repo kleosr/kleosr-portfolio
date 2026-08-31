@@ -1,12 +1,16 @@
-import type { ReactElement } from "react";
+import { useRef, type ReactElement } from "react";
 import { githubUrl } from "../content";
+import { useAboutType } from "../hooks/useAboutType";
 import { AnimatedIcon } from "./AnimatedIcon";
 import { VisionOverlay } from "./VisionOverlay";
 
 export function AboutContact(): ReactElement {
+  const aboutRef = useRef<HTMLElement>(null);
+  useAboutType(aboutRef);
+
   return (
     <>
-      <section className="section about-section" id="about" aria-labelledby="about-title">
+      <section ref={aboutRef} className="section about-section" id="about" aria-labelledby="about-title">
         <header className="section-heading" data-reveal>
           <p>02 / PROFILE</p>
           <div>
@@ -23,7 +27,9 @@ export function AboutContact(): ReactElement {
             <small>01001011<br />01001100<br />01000101<br />01001111</small>
           </div>
           <div className="about-copy">
-            <p data-reveal>Five public tools.</p>
+            <p className="about-type" data-type="Four public tools.">
+              Four public tools.
+            </p>
             <p data-reveal>I am kleosr. I am a Cursor Ambassador.</p>
             <p data-reveal>
               I care about agents that remember the project, stay inside the repo, and do not wreck
@@ -43,13 +49,16 @@ export function AboutContact(): ReactElement {
           <p>03 / SIGNAL</p>
           <div>
             <h2 id="contact-title">Contact</h2>
-            <span className="section-code">EXTERNAL_LINK / READY</span>
+            <span className="section-code">KLSR.CHANNEL / 0001</span>
           </div>
         </header>
         <p className="contact-copy" data-reveal>
-          <a href={githubUrl} target="_blank" rel="noreferrer">
-            GitHub
-            <AnimatedIcon name="arrow" />
+          <a className="contact-github" href={githubUrl} target="_blank" rel="noreferrer">
+            <small>EXTERNAL_LINK / READY</small>
+            <span>
+              GitHub
+              <AnimatedIcon name="arrow" />
+            </span>
           </a>{" "}
           is the door until email is listed.
         </p>

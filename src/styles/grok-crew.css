@@ -1,0 +1,92 @@
+.grok-crew {
+  padding: 7rem 1.25rem;
+  border-top: 1px solid rgb(244 236 217 / 14%);
+  background: var(--black);
+}
+
+.grok-crew header {
+  max-width: 56rem;
+}
+
+.grok-crew header p,
+.grok-crew header span {
+  color: var(--orange);
+  font: 600 0.6875rem/1 var(--mono);
+  letter-spacing: 0.12em;
+}
+
+.grok-crew h2 {
+  margin: 1.25rem 0 1.5rem;
+  font-size: clamp(2.8rem, 9vw, 3.6rem);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+}
+
+.grok-crew header span {
+  color: var(--muted-light);
+}
+
+.grok-agent-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgb(244 236 217 / 16%);
+  list-style: none;
+}
+
+.grok-agent-list li {
+  display: grid;
+  min-height: 7rem;
+  padding: 1.25rem 0;
+  grid-template-columns: 2rem minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 1rem;
+  border-bottom: 1px solid rgb(244 236 217 / 14%);
+}
+
+.grok-agent-list li > span,
+.grok-agent-list small {
+  color: var(--muted-light);
+  font: 500 0.6875rem/1 var(--mono);
+  letter-spacing: 0.1em;
+}
+
+.grok-agent-list li > span {
+  padding-top: 0.45rem;
+}
+
+.grok-agent-list strong {
+  display: block;
+  font-size: clamp(1.125rem, 2.4vw, 1.35rem);
+  font-weight: 600;
+}
+
+.grok-agent-list p {
+  margin: 0.35rem 0 0;
+  color: var(--muted-light);
+  font-size: 0.9375rem;
+}
+
+.grok-agent-list small {
+  align-self: center;
+  color: var(--orange);
+}
+
+.grok-footer {
+  display: flex;
+  min-height: 6rem;
+  padding: 1.5rem 1.25rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-top: 1px solid rgb(244 236 217 / 14%);
+  color: var(--muted-light);
+  font: 500 0.6875rem/1 var(--mono);
+  letter-spacing: 0.1em;
+}
+
+.grok-footer strong {
+  color: var(--orange);
+  font-weight: 600;
+}

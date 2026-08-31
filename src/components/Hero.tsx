@@ -1,7 +1,5 @@
 import type { ReactElement } from "react";
-import { githubUrl, type Tool } from "../content";
-import { AnimatedIcon } from "./AnimatedIcon";
-import { GrokLink } from "./GrokLink";
+import type { Tool } from "../content";
 import { PosterVisual } from "./PosterVisual";
 
 const heroVisual = {
@@ -33,17 +31,6 @@ export function Hero(): ReactElement {
         <p className="hero-support" data-reveal>
           Harnesses, checkers, and themes for people who run agents in a real repo, not a demo.
         </p>
-        <div className="hero-actions" data-reveal>
-          <a className="button button-primary" href="#tools">
-            See the tools
-            <AnimatedIcon name="arrow" />
-          </a>
-          <a className="button button-secondary" href={githubUrl} target="_blank" rel="noreferrer">
-            GitHub
-            <AnimatedIcon name="arrow" />
-          </a>
-          <GrokLink className="button button-grok" />
-        </div>
       </div>
 
       <figure className="hero-visual" data-reveal>

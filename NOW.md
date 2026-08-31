@@ -1,14 +1,14 @@
 Now
-Machine Vision motion is on every plate: hero, five tools, about spec, Grok Bot.
+Tools orbit plus still Grok plates. Dock is icon, number, title link, description, orange tags, Open source.
 
 State
-Overlays run the Editorial loop from Amir Mushich Machine Vision: 8 fps buckets, 90ms alpha blend, contrast assist, 0.9px marks. Site easing is cubic-bezier(0.22, 0.8, 0.22, 1), 280ms UI, 350ms stage fade. No image scale on hover. Canvases pause off-screen. No GSAP. No video analyzer.
+Four tools on a GSAP pin. Plates are not links. Title and Open source go to GitHub. Tags are translucent orange. Grok hero/bay use `chrome="still"`.
 
 Limits
-Still not live camera analysis. Grok Bot remains a roster. Surge writes `dist/CNAME`.
+Commit is on local `main`. Live Surge updates after this commit. cursor-ide-browser MCP was unavailable this pass.
 
 Proof
-`pnpm check && pnpm build && pnpm audit` (35 modules, 0 vulns). Browser: 7 `.overlay-canvas` drawn on home; tool plates show tracking boxes and labels. `pnpm dlx surge ./dist kleosr.surge.sh` → kleosr.surge.sh.
+`pnpm check` exit 0. Puppeteer: cards are `DIV`s, title parent is `H3`, tags `rgba(232, 90, 42, 0.36)`.
 
 Next
-Mario: hard-refresh https://kleosr.surge.sh. Git is live at https://github.com/kleosr/kleosr-portfolio.
+Mario: hard-refresh https://kleosr.surge.sh after the deploy. Say if GitHub `main` should get a push.
