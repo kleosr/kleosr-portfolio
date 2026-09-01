@@ -1,5 +1,10 @@
+html:has(.grok-page) {
+  overflow-x: visible;
+}
+
 .grok-page {
   min-height: 100dvh;
+  overflow-x: visible;
   background-color: var(--black);
   background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 80H80M80 0V80' stroke='%23F4ECD9' stroke-opacity='.05'/%3E%3C/svg%3E");
   color: var(--cream);
@@ -11,6 +16,8 @@
   display: grid;
   min-height: 4.5rem;
   padding: 0 1.25rem;
+  padding-right: max(1.25rem, env(safe-area-inset-right));
+  padding-left: max(1.25rem, env(safe-area-inset-left));
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   border-bottom: 1px solid rgb(244 236 217 / 18%);
@@ -58,7 +65,7 @@
 
 .grok-brand:focus-visible,
 .grok-jump:focus-visible {
-  outline: 1px solid var(--orange);
+  outline: 2px solid var(--orange);
   outline-offset: 3px;
 }
 
