@@ -1,0 +1,45 @@
+.grok-hero-visual { position: relative; margin: 0; }
+
+.grok-frame {
+  position: relative;
+  border: 1px solid rgb(244 236 217 / 22%);
+}
+
+.grok-hero-visual .poster-visual,
+.grok-crew-visual .poster-visual {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.grok-hero-visual .poster-visual::before,
+.grok-hero-visual .poster-visual::after,
+.grok-hero-visual .poster-index,
+.grok-crew-visual .poster-visual::before,
+.grok-crew-visual .poster-visual::after,
+.grok-crew-visual .poster-index {
+  display: none;
+}
+
+.grok-frame::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgb(0 0 0 / 14%) 3px,
+    rgb(0 0 0 / 14%) 4px
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.grok-frame figcaption {
+  position: absolute;
+  z-index: 3;
+  bottom: 0.65rem;
+  left: 0.75rem;
+  margin: 0;
+}

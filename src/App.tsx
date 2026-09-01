@@ -2,6 +2,8 @@ import { useEffect, type ReactElement } from "react";
 import { AboutContact } from "./components/AboutContact";
 import { Hero } from "./components/Hero";
 import { Nav } from "./components/Nav";
+import { ProofBand } from "./components/ProofBand";
+import { ToolCatalog } from "./components/ToolCatalog";
 import { Tools } from "./components/Tools";
 import { useReveal } from "./hooks/useReveal";
 
@@ -28,6 +30,8 @@ export function App(): ReactElement {
       <main id="main">
         <Hero />
         <Tools />
+        <ToolCatalog />
+        <ProofBand />
         <AboutContact />
       </main>
     </>
