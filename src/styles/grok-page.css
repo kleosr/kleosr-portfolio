@@ -13,103 +13,62 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   border-bottom: 1px solid rgb(244 236 217 / 14%);
-  background: rgb(5 5 5 / 88%);
-  backdrop-filter: blur(16px);
+  background: var(--black);
 }
 
-.grok-brand,
-.grok-back {
+.grok-brand {
   display: inline-flex;
   min-height: 2.75rem;
   align-items: center;
   color: var(--cream);
-  text-decoration: none;
-}
-
-.grok-brand {
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: -0.04em;
+  text-decoration: none;
 }
 
-.grok-brand span {
-  color: var(--orange);
-}
+.grok-brand span { color: var(--orange); }
 
-.grok-nav > span,
-.grok-back {
-  font: 500 0.6875rem/1 var(--mono);
+.grok-nav > span {
+  color: var(--muted-light);
+  font: 500 var(--type-kicker)/1 var(--mono);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.grok-nav > span {
-  color: var(--muted-light);
-}
-
-.grok-back {
+.grok-jump {
   justify-self: end;
-  color: var(--orange);
-}
-
-.grok-back:active,
-.grok-back:focus-visible {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
   color: var(--cream);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .grok-back:hover {
-    color: var(--cream);
-  }
+  font: 500 var(--type-kicker)/1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .grok-brand:focus-visible,
-.grok-back:focus-visible {
+.grok-jump:focus-visible {
   outline: 1px solid var(--orange);
   outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .grok-brand:hover,
+  .grok-jump:hover { color: var(--paper); }
 }
 
 .grok-hero {
   position: relative;
   display: grid;
-  min-height: auto;
-  padding: 4.5rem 1.25rem 3.5rem;
-  align-items: start;
-  gap: 3rem;
-  isolation: isolate;
-}
-
-.grok-hero::before {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 60H120M60 0V120' stroke='%23F4ECD9' stroke-opacity='.045'/%3E%3C/svg%3E");
-  content: "";
-}
-
-.grok-hero-copy {
-  position: relative;
-  z-index: 1;
-}
-
-.grok-status {
-  display: flex;
-  margin: 0 0 3rem;
+  min-height: 0;
+  padding: 4.5rem 1.25rem 4rem;
   align-items: center;
-  gap: 0.65rem;
-  color: var(--muted-light);
-  font: 500 0.6875rem/1 var(--mono);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  gap: 3rem;
 }
 
-.grok-status i {
-  display: block;
-  flex: 0 0 auto;
-  width: 3px;
-  height: 1.75rem;
-  background: var(--orange);
-}
+.grok-hero-copy { position: relative; z-index: 1; }
 
 .grok-mark {
   display: flex;
@@ -118,11 +77,7 @@
   gap: 0.85rem;
 }
 
-.grok-hero-logo {
-  display: block;
-  width: 2.25rem;
-  height: 2.25rem;
-}
+.grok-hero-logo { display: block; width: 2.25rem; height: 2.25rem; }
 
 .grok-mark span {
   font-size: 1rem;
@@ -133,69 +88,51 @@
 .grok-hero h1 {
   max-width: 52rem;
   margin: 0;
-  font-size: clamp(3.5rem, 14vw, 8.5rem);
+  font-size: var(--type-display);
   font-weight: 600;
-  line-height: 0.86;
-  letter-spacing: -0.075em;
-  text-wrap: balance;
+  line-height: 1;
+  letter-spacing: -0.045em;
 }
 
-.grok-hero h1 span {
-  display: block;
-  color: var(--orange);
-}
+.grok-hero h1 span { display: block; color: var(--cream); }
 
 .grok-lead {
   max-width: 37rem;
   margin: 2rem 0 0;
   color: var(--muted-light);
-  font-size: 1.0625rem;
+  font-size: var(--type-body);
   line-height: 1.45;
   letter-spacing: -0.02em;
 }
 
-.grok-hero-copy [data-reveal]:nth-child(1) {
-  transition-delay: 40ms;
-}
-
-.grok-hero-copy [data-reveal]:nth-child(2) {
-  transition-delay: 90ms;
-}
-
-.grok-hero-copy [data-reveal]:nth-child(3) {
-  transition-delay: 140ms;
-}
-
-.grok-hero-copy [data-reveal]:nth-child(4) {
-  transition-delay: 190ms;
-}
-
-body.is-ready .grok-page [data-reveal]:not(.is-visible) {
-  transform: translateY(0.55rem);
-}
-
-.grok-hero-visual {
-  position: relative;
-  margin: 0;
-}
+.grok-hero-visual { position: relative; margin: 0; }
 
 .grok-hero-visual .poster-visual,
 .grok-crew-visual .poster-visual {
-  border: 1px solid var(--ink);
+  border: 1px solid rgb(244 236 217 / 16%);
   border-radius: 4px;
-  box-shadow: 0.55rem 0.55rem 0 var(--orange);
+  box-shadow: none;
 }
 
-.grok-crew-visual {
-  margin: 2rem 0 0;
-}
-
-.grok-crew-visual .poster-visual {
-  aspect-ratio: 3 / 4;
-}
-
+.grok-hero-visual .poster-visual::before,
+.grok-hero-visual .poster-visual::after,
 .grok-hero-visual .poster-index,
+.grok-crew-visual .poster-visual::before,
+.grok-crew-visual .poster-visual::after,
 .grok-crew-visual .poster-index {
-  font-size: 0.6875rem;
+  display: none;
 }
 
+.grok-footer {
+  display: flex;
+  min-height: 6rem;
+  padding: 1.5rem 1.25rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-top: 1px solid rgb(244 236 217 / 14%);
+  color: var(--muted-light);
+  font: 500 var(--type-kicker)/1 var(--mono);
+  letter-spacing: 0.1em;
+}

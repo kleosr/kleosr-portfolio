@@ -1,30 +1,43 @@
 .grok-crew {
-  padding: 7rem 1.25rem;
+  padding: 5.5rem 1.25rem 4rem;
   border-top: 1px solid rgb(244 236 217 / 14%);
-  background: var(--black);
 }
 
 .grok-crew header {
-  max-width: 56rem;
+  max-width: 40rem;
+  margin-bottom: 2.5rem;
 }
 
-.grok-crew header p,
-.grok-crew header span {
+.grok-crew header p {
+  margin: 0;
   color: var(--orange);
-  font: 600 0.6875rem/1 var(--mono);
+  font: 600 var(--type-kicker)/1 var(--mono);
   letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .grok-crew h2 {
-  margin: 1.25rem 0 1.5rem;
-  font-size: clamp(2.8rem, 9vw, 3.6rem);
+  margin: 1.1rem 0 0.85rem;
+  font-size: var(--type-title);
   font-weight: 600;
-  line-height: 0.92;
-  letter-spacing: -0.065em;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
 }
 
 .grok-crew header span {
   color: var(--muted-light);
+  font-size: 0.9375rem;
+}
+
+.grok-crew-visual {
+  margin: 0 0 2rem;
+}
+
+.grok-crew-visual .poster-visual {
+  aspect-ratio: 4 / 5;
+  max-height: 28rem;
+  border: 1px solid rgb(244 236 217 / 16%);
+  border-radius: 4px;
 }
 
 .grok-agent-list {
@@ -34,59 +47,66 @@
   list-style: none;
 }
 
-.grok-agent-list li {
+.grok-agent-list button {
   display: grid;
-  min-height: 7rem;
-  padding: 1.25rem 0;
+  width: 100%;
+  min-height: 3.75rem;
+  padding: 0.7rem 0.75rem 0.7rem 0;
   grid-template-columns: 2rem minmax(0, 1fr) auto;
   align-items: start;
-  gap: 1rem;
+  gap: 0.85rem;
+  border: 0;
   border-bottom: 1px solid rgb(244 236 217 / 14%);
+  border-left: 2px solid transparent;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
-.grok-agent-list li > span,
+.grok-agent-list button > span,
 .grok-agent-list small {
   color: var(--muted-light);
-  font: 500 0.6875rem/1 var(--mono);
+  font: 500 var(--type-kicker)/1 var(--mono);
   letter-spacing: 0.1em;
 }
 
-.grok-agent-list li > span {
-  padding-top: 0.45rem;
+.grok-agent-list button > span {
+  padding-top: 0.35rem;
 }
 
 .grok-agent-list strong {
   display: block;
-  font-size: clamp(1.125rem, 2.4vw, 1.35rem);
+  font-size: 1.125rem;
   font-weight: 600;
 }
 
 .grok-agent-list p {
-  margin: 0.35rem 0 0;
+  margin: 0.3rem 0 0;
   color: var(--muted-light);
   font-size: 0.9375rem;
 }
 
 .grok-agent-list small {
   align-self: center;
-  color: var(--orange);
 }
 
-.grok-footer {
-  display: flex;
-  min-height: 6rem;
-  padding: 1.5rem 1.25rem;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  border-top: 1px solid rgb(244 236 217 / 14%);
-  color: var(--muted-light);
-  font: 500 0.6875rem/1 var(--mono);
-  letter-spacing: 0.1em;
+.grok-agent-list button[aria-pressed="true"] {
+  border-left-color: var(--orange);
 }
 
-.grok-footer strong {
-  color: var(--orange);
-  font-weight: 600;
+.grok-agent-list button[aria-pressed="true"] strong,
+.grok-agent-list button[aria-pressed="true"] small {
+  color: var(--cream);
+}
+
+.grok-agent-list button:focus-visible {
+  outline: 1px solid var(--orange);
+  outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .grok-agent-list button:hover strong {
+    color: var(--cream);
+  }
 }

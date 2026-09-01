@@ -1,80 +1,56 @@
-import type { ReactElement } from "react";
-import { grokAgents, grokBayVisual, grokHeroVisual } from "../grok-content";
-import { useReveal } from "../hooks/useReveal";
+import { useRef, type ReactElement } from "react";
+import { grokHeroVisual } from "../grok-content";
+import { useGrokMotion } from "../hooks/useGrokMotion";
+import { GrokCrew } from "./GrokCrew";
 import { GrokLogo } from "./GrokLogo";
-import { HomeLink } from "./HomeLink";
 import { PosterVisual } from "./PosterVisual";
 
 export function GrokPage(): ReactElement {
-  useReveal();
+  const pageRef = useRef<HTMLDivElement>(null);
+  useGrokMotion(pageRef);
 
   return (
-    <div className="grok-page">
-      <a className="skip-link" href="#mission">
-        Skip to mission
+    <div className="grok-page" ref={pageRef}>
+      <a className="skip-link" href="#crew">
+        Skip to flight crew
       </a>
       <div className="grain" aria-hidden="true" />
 
       <header className="grok-nav">
-        <HomeLink className="grok-brand" aria-label="Back to kleosr">
+        <a className="grok-brand" href="/" aria-label="Back to kleosr">
           kleos<span>r</span>
-        </HomeLink>
-        <span>GROK BOT / MISSION BAY</span>
-        <HomeLink className="grok-back">Back to portfolio</HomeLink>
+        </a>
+        <span>Grok Bot / Mission Bay</span>
+        <a className="grok-jump" href="#crew">
+          Flight crew
+        </a>
       </header>
 
       <main id="mission">
         <section className="grok-hero" aria-labelledby="grok-page-title">
           <div className="grok-hero-copy">
-            <p className="grok-status" data-reveal>
-              <i />
-              Public controls in progress.
-            </p>
-            <div className="grok-mark grok-lockup" data-reveal>
+            <div className="grok-mark grok-lockup" data-grok-fade="hero">
               <GrokLogo className="grok-hero-logo" />
               <span>Grok Bot</span>
             </div>
-            <h1 id="grok-page-title" data-reveal>
+            <h1 id="grok-page-title" data-grok-fade="hero">
               The work gets heavy. <span>The agents take it from here.</span>
             </h1>
-            <p className="grok-lead" data-reveal>
-              Grok Bot is where I publish the agents behind my real Cursor sessions. They plan,
-              build, test, and ship while I keep the mission pointed in one direction.
+            <p className="grok-lead" data-grok-fade="hero">
+              Seven agents behind my Cursor sessions. Each one owns a seat.
             </p>
           </div>
 
-          <figure className="grok-hero-visual" data-reveal>
+          <figure className="grok-hero-visual" data-grok-fade="hero">
             <PosterVisual visual={grokHeroVisual} index="PLATE / GB" priority chrome="still" />
           </figure>
         </section>
 
-        <section className="grok-crew" aria-labelledby="crew-title">
-          <header data-reveal>
-            <p>01 / FLIGHT CREW</p>
-            <h2 id="crew-title">Seven agents. Clear ownership.</h2>
-            <span>The bay is open. Interactive controls come next.</span>
-          </header>
-          <figure className="grok-crew-visual" data-reveal>
-            <PosterVisual visual={grokBayVisual} index="PLATE / BAY" chrome="still" />
-          </figure>
-          <ol className="grok-agent-list">
-            {grokAgents.map(([number, name, role, channel]) => (
-              <li key={number} data-reveal>
-                <span>{number}</span>
-                <div>
-                  <strong>{name}</strong>
-                  <p>{role}</p>
-                </div>
-                <small>{channel}</small>
-              </li>
-            ))}
-          </ol>
-        </section>
+        <GrokCrew />
       </main>
 
       <footer className="grok-footer">
         <span>KLEOSR / GROK BOT</span>
-        <strong>BUILDING IN PUBLIC</strong>
         <span>2026</span>
       </footer>
     </div>

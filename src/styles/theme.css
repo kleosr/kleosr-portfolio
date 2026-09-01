@@ -245,6 +245,7 @@ button:focus-visible {
 }
 
 .nav-grok .grok-link-logo {
+  display: block;
   width: 1.15rem;
   height: 1.15rem;
 }
