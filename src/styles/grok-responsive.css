@@ -23,7 +23,7 @@
 
   .grok-bay-split {
     display: flex;
-    align-items: stretch;
+    align-items: start;
     gap: 2rem;
   }
 
@@ -42,19 +42,13 @@
   .grok-agent-list {
     flex: 1 1 auto;
     min-width: 0;
-    min-height: 0;
   }
 
-  .grok-agent-list li {
-    display: flex;
-    flex: 1 1 0;
-    min-height: 44px;
-  }
-
+  .grok-agent-list li,
   .grok-seat {
-    flex: 1 1 auto;
+    flex: none;
+    height: auto;
     min-height: 44px;
-    align-content: center;
   }
 }
 
