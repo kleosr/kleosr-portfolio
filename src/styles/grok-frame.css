@@ -2,7 +2,10 @@
 
 .grok-frame {
   position: relative;
+  overflow: hidden;
+  max-width: 100%;
   border: 1px solid rgb(244 236 217 / 22%);
+  border-radius: 2px;
 }
 
 .grok-hero-visual .poster-visual,

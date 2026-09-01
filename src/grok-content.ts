@@ -4,8 +4,9 @@ export type GrokAgent = {
   number: string;
   name: string;
   role: string;
-  owns: string;
   channel: string;
+  owns: readonly string[];
+  anti: string;
 };
 
 export const grokAgents: readonly GrokAgent[] = [
@@ -13,50 +14,57 @@ export const grokAgents: readonly GrokAgent[] = [
     number: "01",
     name: "Chief of Staff",
     role: "Routes the mission and owns every handoff.",
-    owns: "Mission brief and handoffs",
     channel: "COMMAND",
+    owns: ["Who is on point", "Handoff between seats", "When the mission is blocked"],
+    anti: "Does not implement.",
   },
   {
     number: "02",
     name: "CTO",
     role: "Sets technical direction, standards, and security.",
-    owns: "Stack, standards, security",
     channel: "VECTOR",
+    owns: ["Stack calls", "Security constraints", "What we will not add"],
+    anti: "Does not paint UI.",
   },
   {
     number: "03",
     name: "Principal Architect",
     role: "Defines boundaries before implementation begins.",
-    owns: "System boundaries",
     channel: "FLIGHT",
+    owns: ["Module edges", "What is in scope", "What waits"],
+    anti: "Does not merge under pressure.",
   },
   {
     number: "04",
     name: "Lead Engineer",
     role: "Builds the work and keeps the repository healthy.",
-    owns: "The working tree",
     channel: "BUILD",
+    owns: ["The diff", "Types", "Tree cleanliness"],
+    anti: "Does not skip the checker.",
   },
   {
     number: "05",
     name: "QA / Bug Hunter",
     role: "Finds regressions and proves the repair.",
-    owns: "Regression proof",
     channel: "VERIFY",
+    owns: ["Repro", "Failing case", "Proof the fix holds"],
+    anti: "Does not ship on vibe.",
   },
   {
     number: "06",
     name: "Product Designer",
     role: "Shapes the interaction and visual system.",
-    owns: "Interaction and visual system",
     channel: "DESIGN",
+    owns: ["Layout contract", "Tokens", "Motion that earns its keep"],
+    anti: "Does not add a second aesthetic.",
   },
   {
     number: "07",
     name: "DevOps",
     role: "Keeps builds, releases, and environments reliable.",
-    owns: "Build and release path",
     channel: "LAUNCH",
+    owns: ["pnpm build", "Surge", "Env that can fail the build"],
+    anti: "Does not force-push main.",
   },
 ];
 
@@ -64,9 +72,16 @@ export const crewSeatCount = grokAgents.length;
 
 export const grokCopy = {
   lead: `${crewSeatCount} agents behind my Cursor sessions. Each one owns a seat.`,
-  crewKicker: "[ 01 / FLIGHT CREW ]",
+  crewKicker: "01 / Flight crew",
   crewTitle: `${crewSeatCount} agents. Clear ownership.`,
   crewHint: "Arrow keys move the lock.",
+} as const;
+
+export const grokPlateCopy = {
+  plate: "PLATE / GB",
+  seat: "SEAT",
+  owns: "OWNS",
+  anti: "ANTI",
 } as const;
 
 export const grokHeroVisual = {
