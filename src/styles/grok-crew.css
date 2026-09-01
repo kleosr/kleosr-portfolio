@@ -184,18 +184,23 @@
 }
 
 .grok-seat-body {
+  display: flex;
   min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
 }
 
 .grok-seat strong {
   display: block;
   font-size: 1.05rem;
   font-weight: 600;
+  line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
 .grok-seat p {
-  margin: 0.3rem 0 0;
+  margin: 0;
   color: var(--muted-light);
   font-size: 0.9375rem;
   line-height: 1.4;
@@ -203,7 +208,7 @@
 
 .grok-seat-vector {
   display: inline-block;
-  margin-top: 0.4rem;
+  margin-top: 0;
   padding: 0.2rem 0.4rem;
   border: 1px solid rgb(244 236 217 / 20%);
   border-radius: 2px;
