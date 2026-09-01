@@ -1,0 +1,100 @@
+{
+  "fetchedAt": "2026-09-01T16:52:31.894Z",
+  "repos": [
+    {
+      "fullName": "kleosr/cursordoctrine",
+      "description": "Cursor hook pack: doctrine at session start, hard gate on writes, shell deny-list, final review at stop.",
+      "htmlUrl": "https://github.com/kleosr/cursordoctrine",
+      "stargazersCount": 8,
+      "forksCount": 1,
+      "language": "JavaScript",
+      "license": "MIT",
+      "pushedAt": "2026-08-20T04:50:09Z",
+      "topics": [
+        "agents",
+        "cursor",
+        "hooks"
+      ]
+    },
+    {
+      "fullName": "kleosr/cursorkleosr",
+      "description": "Make AI Development Feel Natural in Cursor",
+      "htmlUrl": "https://github.com/kleosr/cursorkleosr",
+      "stargazersCount": 325,
+      "forksCount": 41,
+      "language": null,
+      "license": "Other",
+      "pushedAt": "2026-08-20T04:50:00Z",
+      "topics": [
+        "agent-memory",
+        "ai",
+        "cursor",
+        "cursor-rules",
+        "ide"
+      ]
+    },
+    {
+      "fullName": "kleosr/veredicto",
+      "description": "Agent-native TypeScript checker: batch-verify candidate patches against a live project session and get structured verdicts, not prose.",
+      "htmlUrl": "https://github.com/kleosr/veredicto",
+      "stargazersCount": 1,
+      "forksCount": 0,
+      "language": "JavaScript",
+      "license": "MIT",
+      "pushedAt": "2026-08-20T04:50:05Z",
+      "topics": [
+        "coding-agents",
+        "language-server",
+        "typescript"
+      ]
+    },
+    {
+      "fullName": "kleosr/kleosrules",
+      "description": "Cursor harness pack: user rules, skills, Bash hooks, local HANDOFF memory. macOS, Linux, Windows (WSL).",
+      "htmlUrl": "https://github.com/kleosr/kleosrules",
+      "stargazersCount": 2,
+      "forksCount": 0,
+      "language": "Shell",
+      "license": "MIT",
+      "pushedAt": "2026-08-31T02:17:45Z",
+      "topics": [
+        "bash",
+        "cursor",
+        "cursor-rules",
+        "hooks"
+      ]
+    },
+    {
+      "fullName": "kleosr/orangesor-cursortheme",
+      "description": "Orange-accented dark and light theme for VS Code and Cursor. WCAG AA, tuned for AI surfaces.",
+      "htmlUrl": "https://github.com/kleosr/orangesor-cursortheme",
+      "stargazersCount": 2,
+      "forksCount": 0,
+      "language": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-20T04:50:03Z",
+      "topics": [
+        "accessibility",
+        "cursor",
+        "theme",
+        "vscode-theme"
+      ]
+    },
+    {
+      "fullName": "kleosr/PE2-CLI",
+      "description": "Structured prompt generation, Rust native — rough prompt in, PE2-structured prompt out.",
+      "htmlUrl": "https://github.com/kleosr/PE2-CLI",
+      "stargazersCount": 1,
+      "forksCount": 0,
+      "language": "Rust",
+      "license": null,
+      "pushedAt": "2026-08-20T04:50:10Z",
+      "topics": [
+        "cli",
+        "llm",
+        "prompt-engineering",
+        "rust"
+      ]
+    }
+  ]
+}
