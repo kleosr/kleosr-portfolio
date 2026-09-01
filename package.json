@@ -10,9 +10,10 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "snapshot": "node scripts/snapshot-github.mjs",
+    "build": "node scripts/snapshot-github.mjs && tsc -b && vite build",
     "preview": "vite preview",
-    "lint": "eslint src/main.tsx src/grok-main.tsx src/App.tsx src/components src/hooks src/vision src/content.ts src/grok-content.ts vite.config.ts",
+    "lint": "eslint src/main.tsx src/grok-main.tsx src/App.tsx src/components src/hooks src/vision src/data src/content.ts src/grok-content.ts vite.config.ts",
     "check": "tsc -b && pnpm lint"
   },
   "dependencies": {

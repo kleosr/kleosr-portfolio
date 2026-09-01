@@ -1,5 +1,6 @@
 import { useRef, useState, type CSSProperties, type ReactElement } from "react";
-import { tools, type Tool } from "../content";
+import { tools, toolsCopy, type Tool } from "../content";
+import { githubRepo, snapshotDay } from "../data/github";
 import { useToolOrbit } from "../hooks/useToolOrbit";
 import { AnimatedIcon } from "./AnimatedIcon";
 import { PosterVisual } from "./PosterVisual";
@@ -7,6 +8,8 @@ import { PosterVisual } from "./PosterVisual";
 const slotStep = 360 / tools.length;
 
 function ToolDock({ tool }: { tool: Tool }): ReactElement {
+  const record = githubRepo(tool.fullName);
+
   return (
     <div className="tool-dock">
       <header className="tool-header">
@@ -26,9 +29,22 @@ function ToolDock({ tool }: { tool: Tool }): ReactElement {
           <li key={tag}>{tag}</li>
         ))}
       </ul>
-      <a className="tool-source" href={tool.href} target="_blank" rel="noreferrer">
-        Open source
-      </a>
+      <p className="tool-meta">
+        <a className="tool-source" href={tool.href} target="_blank" rel="noreferrer">
+          {toolsCopy.openSource}
+        </a>
+        {record ? (
+          <data className="tool-stars" value={record.stargazersCount}>
+            {record.stargazersCount} {toolsCopy.stars}
+          </data>
+        ) : null}
+      </p>
+      {record ? <p className="tool-snapshot">{`${toolsCopy.snapshotKicker} ${snapshotDay()}`}</p> : null}
+      {tool.install ? (
+        <p className="tool-install">
+          <code>{tool.install}</code>
+        </p>
+      ) : null}
     </div>
   );
 }
@@ -42,10 +58,10 @@ export function Tools(): ReactElement {
   return (
     <section ref={sectionRef} className="section tools-section" id="tools" aria-labelledby="tools-title">
       <header className="section-heading" data-reveal>
-        <p>01 / INDEX</p>
+        <p>{toolsCopy.kicker}</p>
         <div>
-          <h2 id="tools-title">Tools</h2>
-          <span className="section-code">KLSR.PUBLIC_WORK / 0003</span>
+          <h2 id="tools-title">{toolsCopy.title}</h2>
+          <span className="section-code">{toolsCopy.code}</span>
         </div>
       </header>
       <div className="tool-orbit-hold">
