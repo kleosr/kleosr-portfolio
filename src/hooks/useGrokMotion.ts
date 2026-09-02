@@ -36,7 +36,7 @@ export function useGrokMotion(root: RefObject<HTMLElement | null>): void {
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: reduce)", () => {
-        gsap.set([...hero, ...crew], { autoAlpha: 1, y: 0 });
+        gsap.set([...hero, ...crew], { autoAlpha: 1, y: 0, clearProps: "opacity,visibility,transform" });
       });
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {

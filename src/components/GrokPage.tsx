@@ -50,8 +50,7 @@ export function GrokPage(): ReactElement {
           </div>
 
           <figure className="grok-hero-visual grok-frame" data-grok-fade="hero">
-            <PosterVisual visual={grokHeroVisual} index="PLATE / GB" priority chrome="still" />
-            <figcaption>[ PLATE / GB ]</figcaption>
+            <PosterVisual visual={grokHeroVisual} index="PLATE / GB" priority chrome="still" scanline />
           </figure>
         </section>
 
