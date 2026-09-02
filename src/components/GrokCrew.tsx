@@ -12,7 +12,16 @@ export function GrokCrew(): ReactElement {
     if (next === null) return;
     event.preventDefault();
     setActive(next);
-    event.currentTarget.querySelectorAll("button")[next]?.focus();
+    event.currentTarget.querySelectorAll<HTMLButtonElement>("button")[next]?.focus();
+  }
+
+  function onSeatKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
+    const next = grokAgentIndex(active, event.key);
+    if (next === null) return;
+    event.preventDefault();
+    setActive(next);
+    const buttons = event.currentTarget.closest("ol")?.querySelectorAll<HTMLButtonElement>("button");
+    buttons?.[next]?.focus();
   }
 
   return (
@@ -22,17 +31,20 @@ export function GrokCrew(): ReactElement {
         <h2 id="crew-title">{grokCopy.crewTitle}</h2>
         <span>{grokCopy.crewHint}</span>
       </header>
-      <p className="grok-lock" aria-live="polite">
-        <span>LOCK</span>
-        <data value={locked.number}>{locked.number}</data>
-        <strong>{locked.name}</strong>
-      </p>
+      <div className="sr-only" aria-live="polite">
+        {locked.number} {locked.name}
+      </div>
       <div className="grok-bay-split">
         <GrokBayPlate agent={locked} />
         <ol className="grok-agent-list" onKeyDown={onListKey}>
           {grokAgents.map((agent, index) => (
             <li key={agent.number} data-grok-fade="crew">
-              <GrokSeat agent={agent} pressed={index === active} onLock={() => setActive(index)} />
+              <GrokSeat
+                agent={agent}
+                pressed={index === active}
+                onLock={() => setActive(index)}
+                onKeyDown={onSeatKeyDown}
+              />
             </li>
           ))}
         </ol>

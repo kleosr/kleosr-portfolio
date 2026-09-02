@@ -7,8 +7,10 @@ type PosterChrome = "full" | "still";
 type PosterVisualProps = {
   visual: Tool["visual"];
   index: string;
+  meta?: string;
   priority?: boolean;
   chrome?: PosterChrome;
+  scanline?: boolean;
 };
 
 function plateSeed(index: string): number {
@@ -18,11 +20,13 @@ function plateSeed(index: string): number {
 export function PosterVisual({
   visual,
   index,
+  meta,
   priority = false,
   chrome = "full",
+  scanline = false,
 }: PosterVisualProps): ReactElement {
   return (
-    <div className="poster-visual">
+    <div className={`poster-visual${scanline ? " has-scanline" : ""}`}>
       <img
         src={visual.src}
         alt={visual.alt}
@@ -35,14 +39,14 @@ export function PosterVisual({
         <>
           <VisionOverlay seed={plateSeed(index)} assist />
           <div className="poster-agent" aria-hidden="true">
-            <span>{visual.agent}</span>
+            <span>{visual.agent}</span>{" "}
             <strong>{visual.status}</strong>
             <i />
           </div>
           <div className="poster-code" aria-hidden="true">
             {visual.code.map((line, lineIndex) => (
               <span key={line}>
-                <b>{String(lineIndex + 1).padStart(2, "0")}</b>
+                <b>{String(lineIndex + 1).padStart(2, "0")}</b>{" "}
                 {line}
               </span>
             ))}
@@ -51,10 +55,19 @@ export function PosterVisual({
             01001011 01001100 01000101 01001111 01010011 01010010
           </span>
         </>
-      ) : null}
+      ) : null}{" "}
       <span className="poster-index" aria-hidden="true">
         {index}
       </span>
+      {meta ? (
+        <>
+          {" "}
+          <span className="poster-meta" aria-hidden="true">
+            {meta}
+          </span>
+        </>
+      ) : null}
+      {scanline ? <span className="poster-scanline" aria-hidden="true" /> : null}
     </div>
   );
 }

@@ -3,7 +3,7 @@
   padding: 3.25rem 1.25rem 2.75rem;
   padding-right: max(1.25rem, env(safe-area-inset-right));
   padding-left: max(1.25rem, env(safe-area-inset-left));
-  border-top: 1px solid rgb(244 236 217 / 18%);
+  border-top: 1px solid var(--hairline-cream);
 }
 
 .grok-crew header {
@@ -90,8 +90,8 @@
   max-height: calc(100% - 2.6rem);
   padding: 0.75rem 0.8rem 0.7rem;
   overflow: hidden;
-  border: 1px solid rgb(244 236 217 / 20%);
-  border-radius: 2px;
+  border: 1px solid var(--hairline-cream);
+  border-radius: var(--radius-sm);
   background: rgb(9 9 9 / 84%);
 }
 
@@ -152,7 +152,7 @@
   padding: 0;
   min-width: 0;
   flex-direction: column;
-  border-top: 1px solid rgb(244 236 217 / 18%);
+  border-top: 1px solid var(--hairline-cream);
   list-style: none;
 }
 
@@ -163,20 +163,20 @@
   width: 100%;
   min-height: 44px;
   padding: 0.7rem 0.65rem;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  align-items: start;
-  gap: 0.75rem;
+  grid-template-columns: 2rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem 1rem;
   border: 0;
-  border-bottom: 1px solid rgb(244 236 217 / 14%);
+  border-bottom: 1px solid var(--hairline-cream);
   border-left: 2px solid transparent;
   background: transparent;
   color: inherit;
   text-align: left;
   cursor: pointer;
+  transition: transform var(--duration) var(--ease);
 }
 
 .grok-seat-index {
-  padding-top: 0.2rem;
   color: var(--muted-light);
   font: 600 var(--type-kicker)/1 var(--mono);
   font-variant-numeric: tabular-nums;
@@ -208,14 +208,16 @@
 
 .grok-seat-vector {
   display: inline-block;
+  align-self: center;
   margin-top: 0;
   padding: 0.2rem 0.4rem;
-  border: 1px solid rgb(244 236 217 / 20%);
-  border-radius: 2px;
+  border: 1px solid var(--hairline-cream);
+  border-radius: var(--radius-sm);
   color: var(--cream);
   font: 600 var(--type-kicker)/1 var(--mono);
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .grok-bay-brief .grok-seat-vector {
@@ -233,8 +235,8 @@
 }
 
 .grok-seat:focus-visible {
-  outline: 2px solid var(--orange);
-  outline-offset: 3px;
+  outline: 2px solid var(--orange-hot);
+  outline-offset: 2px;
 }
 
 .grok-seat:active {
