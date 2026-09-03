@@ -1,15 +1,15 @@
 Now
-Now
-Unified home and /grok-bot/ as one instrument across components, layout, motion, and buttons. Plates eager and logo SVG sized.
+Home craft pass: same public-work product, new frame.
 
 State
-PR #4 merged to main. All defects resolved: plate chrome within frame, no duplicate lock/figcaption, aligned desktop geometry, 44px tap targets, reduced motion static orbit, touch hover cleaned up.
+Hero has Tools + GitHub. Plate HUD stays inside PosterVisual. Orbit still pins. Catalog is seat rows. Proof is a ledger of sourced figures. Contact keeps the GitHub door plus a real-link footer. Grok bay unchanged (4:5, black, own CSS).
 
 Limits
-Hard-refresh after Surge. dist/CNAME stays untracked.
+Do not restyle Grok to match home cream bands. dist/CNAME stays untracked.
 
 Proof
-pnpm check and pnpm build exit 0. Viewports 390, 430, 768, 1280 (normal & reduced motion) audited clean.
+pnpm check exit 0. pnpm build exit 0.
 
 Next
-Deploy to kleosr.surge.sh and verify live response.
+Review or merge PR #9: https://github.com/kleosr/kleosr-portfolio/pull/9
+Deploy to Surge after merge.

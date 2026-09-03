@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-03T04:04:56.214Z",
+  "fetchedAt": "2026-09-03T21:00:12.907Z",
   "repos": [
     {
       "fullName": "kleosr/cursordoctrine",
@@ -56,7 +56,7 @@
       "forksCount": 0,
       "language": "Shell",
       "license": "MIT",
-      "pushedAt": "2026-09-02T22:35:46Z",
+      "pushedAt": "2026-09-03T19:25:29Z",
       "topics": [
         "bash",
         "cursor",

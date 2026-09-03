@@ -2,7 +2,24 @@ import { useRef, type ReactElement } from "react";
 import { aboutCopy, contactCopy, githubUrl } from "../content";
 import { useAboutType } from "../hooks/useAboutType";
 import { AnimatedIcon } from "./AnimatedIcon";
+import { GrokLink } from "./GrokLink";
 import { VisionOverlay } from "./VisionOverlay";
+
+function SiteFooter(): ReactElement {
+  return (
+    <footer className="site-footer">
+      <a className="site-footer-mark" href="#top" aria-label="kleosr home">
+        kleos<span>r</span>
+      </a>
+      <nav className="site-footer-links" aria-label="Footer">
+        <a href={githubUrl} target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+        <GrokLink className="site-footer-grok" shared />
+      </nav>
+    </footer>
+  );
+}
 
 export function AboutContact(): ReactElement {
   const aboutRef = useRef<HTMLElement>(null);
@@ -63,6 +80,7 @@ export function AboutContact(): ReactElement {
           </a>
           {contactCopy.after}
         </p>
+        <SiteFooter />
       </section>
     </>
   );
