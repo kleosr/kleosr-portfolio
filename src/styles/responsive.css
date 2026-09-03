@@ -1,6 +1,11 @@
 @media (min-width: 40rem) {
   .hero,
-  .section {
+  .section,
+  .section.tools-section,
+  .section.catalog-section,
+  .section.proof-section,
+  .section.about-section,
+  .section.contact-section {
     padding-inline: max(2rem, calc((100vw - 96rem) / 2));
     scroll-margin-top: 5.25rem;
   }
@@ -12,7 +17,7 @@
   .nav {
     padding: 0.35rem 0.4rem 0.35rem 1rem;
     grid-template-columns: auto 1fr;
-    border-radius: 6px;
+    border-radius: var(--radius-lg);
   }
 
   .nav-primary {
@@ -28,7 +33,13 @@
   }
 
   .section-heading {
-    grid-template-columns: 6rem minmax(0, 1fr);
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+
+  .catalog-head {
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: 0.5rem;
   }
 
   .section.tools-section {
@@ -62,6 +73,10 @@
 
   .tool-orbit {
     margin-left: -16%;
+  }
+
+  .proof-figures {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -97,6 +112,13 @@
   .section-heading {
     margin-bottom: 6rem;
     grid-template-columns: 8rem minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+
+  .catalog-head {
+    margin-bottom: 3.5rem;
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: 0.5rem;
   }
 
   .tools-section .section-heading {
