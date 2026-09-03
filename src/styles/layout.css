@@ -221,10 +221,15 @@ main {
   transition: color var(--duration) var(--ease), transform var(--duration) var(--ease);
 }
 
-.tool-header h3 a:hover,
 .tool-header h3 a:active,
 .tool-header h3 a:focus-visible {
   color: var(--orange);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tool-header h3 a:hover {
+    color: var(--orange);
+  }
 }
 
 .tool-description {
