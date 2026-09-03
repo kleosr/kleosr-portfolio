@@ -1,0 +1,56 @@
+.grok-control {
+  display: inline-flex;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.05rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  font: 600 var(--type-kicker) / 1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color var(--duration) var(--ease),
+    background-color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
+}
+
+.grok-control-primary {
+  border: 1px solid var(--orange);
+  background: var(--orange);
+  color: var(--black);
+}
+
+.grok-control-ghost {
+  border: 1px solid var(--hairline-cream);
+  background: transparent;
+  color: var(--cream);
+}
+
+.grok-control:focus-visible {
+  outline: 2px solid var(--orange-hot);
+  outline-offset: 2px;
+}
+
+.grok-control:active {
+  transform: scale(0.98);
+}
+
+.grok-control:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .grok-control-primary:hover {
+    border-color: var(--orange-hot);
+    background: var(--orange-hot);
+  }
+
+  .grok-control-ghost:hover {
+    border-color: var(--cream);
+    color: var(--paper);
+  }
+}

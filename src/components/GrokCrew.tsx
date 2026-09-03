@@ -1,33 +1,33 @@
-import { useState, type KeyboardEvent, type ReactElement } from "react";
-import { grokAgents, grokAgentIndex, grokCopy } from "../grok-content";
+import type { KeyboardEvent, ReactElement } from "react";
+import { grokAgentIndex, grokAgents, grokCopy, type GrokAgent } from "../grok-content";
 import { GrokBayPlate } from "./GrokBayPlate";
 import { GrokSeat } from "./GrokSeat";
+import { GrokKicker } from "./GrokUi";
 
-export function GrokCrew(): ReactElement {
-  const [active, setActive] = useState(0);
-  const locked = grokAgents[active] ?? grokAgents[0];
+type GrokCrewProps = {
+  active: number;
+  locked: GrokAgent;
+  onLock: (index: number) => void;
+};
 
-  function onListKey(event: KeyboardEvent<HTMLOListElement>): void {
-    const next = grokAgentIndex(active, event.key);
-    if (next === null) return;
-    event.preventDefault();
-    setActive(next);
-    event.currentTarget.querySelectorAll<HTMLButtonElement>("button")[next]?.focus();
-  }
+function moveLock(
+  event: KeyboardEvent<HTMLElement>,
+  active: number,
+  onLock: (index: number) => void,
+): void {
+  const next = grokAgentIndex(active, event.key);
+  if (next === null) return;
+  event.preventDefault();
+  onLock(next);
+  const list = event.currentTarget.closest("ol") ?? event.currentTarget;
+  list.querySelectorAll<HTMLButtonElement>("button")[next]?.focus({ preventScroll: true });
+}
 
-  function onSeatKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
-    const next = grokAgentIndex(active, event.key);
-    if (next === null) return;
-    event.preventDefault();
-    setActive(next);
-    const buttons = event.currentTarget.closest("ol")?.querySelectorAll<HTMLButtonElement>("button");
-    buttons?.[next]?.focus();
-  }
-
+export function GrokCrew({ active, locked, onLock }: GrokCrewProps): ReactElement {
   return (
     <section className="grok-crew" id="crew" aria-labelledby="crew-title">
       <header data-grok-fade="crew">
-        <p>{grokCopy.crewKicker}</p>
+        <GrokKicker>{grokCopy.crewKicker}</GrokKicker>
         <h2 id="crew-title">{grokCopy.crewTitle}</h2>
         <span>{grokCopy.crewHint}</span>
       </header>
@@ -36,14 +36,14 @@ export function GrokCrew(): ReactElement {
       </div>
       <div className="grok-bay-split">
         <GrokBayPlate agent={locked} />
-        <ol className="grok-agent-list" onKeyDown={onListKey}>
+        <ol className="grok-agent-list" onKeyDown={(event) => moveLock(event, active, onLock)}>
           {grokAgents.map((agent, index) => (
             <li key={agent.number} data-grok-fade="crew">
               <GrokSeat
                 agent={agent}
                 pressed={index === active}
-                onLock={() => setActive(index)}
-                onKeyDown={onSeatKeyDown}
+                onLock={() => onLock(index)}
+                onKeyDown={(event) => moveLock(event, active, onLock)}
               />
             </li>
           ))}
