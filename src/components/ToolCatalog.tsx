@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import { catalog, catalogCopy, type CatalogPack } from "../content";
 import { githubRepo, snapshotDay } from "../data/github";
+import { IndexMark } from "./HomeUi";
 
 function CatalogRow({ pack }: { pack: CatalogPack }): ReactElement {
   const record = githubRepo(pack.fullName);
@@ -8,19 +9,21 @@ function CatalogRow({ pack }: { pack: CatalogPack }): ReactElement {
   return (
     <li>
       <a className="tool-catalog-row" href={pack.href} target="_blank" rel="noreferrer">
-        <span className="tool-catalog-index">{pack.number}</span>
+        <IndexMark className="tool-catalog-index" value={pack.number} />
         <div className="tool-catalog-body">
           <strong>{pack.name}</strong>
           <p>{pack.description}</p>
-          <ul aria-label={`${pack.name} tags`}>
-            {pack.tags.map((tag) => (
-              <li key={tag}>{tag}</li>
-            ))}
-          </ul>
         </div>
+        <ul className="tool-catalog-tags" aria-label={`${pack.name} tags`}>
+          {pack.tags.map((tag) => (
+            <li key={tag}>{tag}</li>
+          ))}
+        </ul>
         {record ? (
           <data value={record.stargazersCount}>{record.stargazersCount}</data>
-        ) : null}
+        ) : (
+          <span className="tool-catalog-gap" aria-hidden="true" />
+        )}
       </a>
     </li>
   );

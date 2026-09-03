@@ -122,7 +122,10 @@ button:focus-visible {
 .tool-source,
 .tool-catalog-row,
 .contact-github,
-.grok-seat {
+.grok-seat,
+.action,
+.site-footer-mark,
+.site-footer-links a {
   transition:
     color var(--duration) var(--ease),
     background-color var(--duration) var(--ease),
@@ -192,9 +195,7 @@ button:focus-visible {
   align-items: center;
   border: 1px solid var(--hairline-cream);
   border-radius: var(--radius-lg);
-  background: rgb(9 9 9 / 92%);
-  box-shadow: 0 1rem 3rem rgb(0 0 0 / 22%);
-  backdrop-filter: blur(16px);
+  background: var(--black);
   pointer-events: auto;
 }
 
