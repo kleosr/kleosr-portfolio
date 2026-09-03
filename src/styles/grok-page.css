@@ -92,6 +92,13 @@ html:has(.grok-page) {
   gap: 1.25rem 1.75rem;
 }
 
+.grok-meta .ds-kicker {
+  margin: 0;
+  color: var(--muted-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .grok-unit {
   position: absolute;
   top: -0.15em;
