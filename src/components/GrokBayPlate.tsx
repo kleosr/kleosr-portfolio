@@ -5,7 +5,7 @@ import { PosterVisual } from "./PosterVisual";
 export function GrokBayPlate({ agent }: { agent: GrokAgent }): ReactElement {
   return (
     <figure className="grok-bay grok-frame" id="bay" data-grok-fade="crew">
-      <PosterVisual visual={grokBayVisual} index={grokPlateCopy.plate} chrome="still" />
+      <PosterVisual visual={grokBayVisual} index={grokPlateCopy.plate} priority chrome="still" />
       <figcaption>
         <span>{grokPlateCopy.plate}</span>
         <span>{`${grokPlateCopy.seat} / ${agent.number}`}</span>
