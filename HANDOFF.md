@@ -5,6 +5,7 @@ GitHub product stats are a committed snapshot (`src/data/github.snapshot.json`) 
 FILES
 `src/content.ts` and `src/grok-content.ts` hold operator copy.
 `src/data/github.snapshot.json` holds repo records plus `fetchedAt`.
+`design-system.md` and `src/components/system/` define the shared instrument used by both HTML entries.
 `dist/` publishes to Surge. No Three, no API server, no auth.
 
 STATUS

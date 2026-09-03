@@ -1,15 +1,14 @@
 Now
-Now
-Unified home and /grok-bot/ as one instrument across components, layout, motion, and buttons. Plates eager and logo SVG sized.
+Unified design system: `src/components/system/` serves both home and `/grok-bot/`. Spec in `design-system.md`.
 
 State
-PR #4 merged to main. All defects resolved: plate chrome within frame, no duplicate lock/figcaption, aligned desktop geometry, 44px tap targets, reduced motion static orbit, touch hover cleaned up.
+PR open on `cursor/unified-design-system-3cd5`. Shared Kicker, Index, SectionHeader, Plate, Row, Link, Button, ProofFigure. Bay plate uses SEAT index (no duplicate PLATE/GB). GrokSeat removed.
 
 Limits
 Hard-refresh after Surge. dist/CNAME stays untracked.
 
 Proof
-pnpm check and pnpm build exit 0. Viewports 390, 430, 768, 1280 (normal & reduced motion) audited clean.
+pnpm check and pnpm build exit 0. Overflow clean at 390/430/768/1280 on both routes.
 
 Next
-Deploy to kleosr.surge.sh and verify live response.
+Merge PR and deploy to kleosr.surge.sh.
