@@ -52,7 +52,8 @@ main {
 }
 
 .hero-copy,
-.hero-visual {
+.hero-visual,
+.hero-support {
   position: relative;
   z-index: 1;
 }
@@ -118,15 +119,6 @@ main {
 
 .hero-visual {
   margin: 0;
-}
-
-.hero-visual figcaption {
-  display: flex;
-  margin-top: 0.65rem;
-  justify-content: space-between;
-  color: var(--muted-dark);
-  font: 500 var(--type-kicker)/1 var(--mono);
-  letter-spacing: 0.1em;
 }
 
 .section {

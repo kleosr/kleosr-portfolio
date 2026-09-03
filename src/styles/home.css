@@ -1,0 +1,217 @@
+.nav {
+  background: var(--black);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero {
+  row-gap: 1.5rem;
+  column-gap: 3rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.75rem;
+}
+
+.action {
+  display: inline-flex;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.1rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  font: 600 var(--type-kicker) / 1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition:
+    color var(--duration) var(--ease),
+    background-color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
+}
+
+.action-primary {
+  border: 1px solid var(--orange);
+  background: var(--orange);
+  color: var(--black);
+}
+
+.action-ghost {
+  border: 1px solid var(--hairline-ink);
+  background: transparent;
+  color: var(--ink);
+}
+
+.action:focus-visible {
+  outline: 2px solid var(--orange-hot);
+  outline-offset: 2px;
+}
+
+.action:active {
+  transform: scale(0.98);
+}
+
+.hero-support {
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+}
+
+.tool-spec-card {
+  display: none;
+}
+
+.tools-section.is-static .tool-spec-card {
+  display: block;
+  padding: 0.75rem 0.85rem 0.9rem;
+}
+
+.tools-section.is-static .tool-dock {
+  display: none;
+}
+
+.tools-section.is-static .tool-spec-card .tool-description {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.tools-section.is-static .tool-spec-card .tool-header h3 {
+  white-space: normal;
+  font-size: clamp(1rem, 3vw, 1.35rem);
+}
+
+.index-mark {
+  color: var(--muted-light);
+  font: 600 var(--type-kicker) / 1 var(--mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+}
+
+.tool-catalog-row {
+  align-items: start;
+}
+
+.tool-catalog-tags {
+  display: flex;
+  margin: 0.15rem 0 0;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+}
+
+.proof-figures {
+  gap: 0;
+  border: 0;
+  border-top: 1px solid var(--line-light);
+  border-radius: 0;
+  background: transparent;
+}
+
+.proof-figure {
+  padding: 1.5rem 0 1.35rem;
+  background: transparent;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.site-footer {
+  display: flex;
+  width: 100%;
+  margin-top: 4rem;
+  padding-top: 1.25rem;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid rgb(9 9 9 / 22%);
+}
+
+.site-footer-mark {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.site-footer-mark span {
+  color: var(--cream);
+}
+
+.site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem 0.35rem;
+}
+
+.site-footer-links a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.65rem;
+  align-items: center;
+  color: var(--ink);
+  font: 600 var(--type-kicker) / 1 var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition:
+    color var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
+}
+
+.site-footer-grok > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.site-footer-grok .grok-link-logo {
+  display: block;
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.site-footer-links a:active,
+.site-footer-mark:active {
+  transform: scale(0.98);
+}
+
+.site-footer-links a:focus-visible,
+.site-footer-mark:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .action-primary:hover {
+    border-color: var(--orange-hot);
+    background: var(--orange-hot);
+  }
+
+  .action-ghost:hover {
+    border-color: var(--ink);
+    color: var(--black);
+  }
+
+  .nav-logo:hover,
+  .nav-grok:hover {
+    color: var(--paper);
+  }
+
+  .site-footer-links a:hover,
+  .site-footer-mark:hover {
+    color: var(--black);
+  }
+}

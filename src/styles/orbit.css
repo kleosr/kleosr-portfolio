@@ -132,10 +132,7 @@
 }
 
 .tools-section.is-static .tool-orbit-name {
-  display: block;
-  padding: 0.7rem 0.85rem 0.85rem;
-  color: var(--muted-light);
-  font: 600 var(--type-kicker)/1 var(--mono);
+  display: none;
 }
 
 .tool-dock {

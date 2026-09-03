@@ -138,6 +138,14 @@ export const proofCopy = {
 
 export const githubUrl = "https://github.com/kleosr";
 
+export const heroCopy = {
+  kicker: "Cursor ambassador",
+  headline: "Tools for Cursor sessions that have to live in a real repo.",
+  support: "Harnesses and checkers for people who run agents in a real repo, not a demo.",
+  primary: "Tools",
+  secondary: "GitHub",
+} as const;
+
 export const productPackCount = tools.length + catalog.length;
 
 export const aboutCopy = {
