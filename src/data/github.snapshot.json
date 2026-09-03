@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-01T20:02:15.970Z",
+  "fetchedAt": "2026-09-03T04:04:56.214Z",
   "repos": [
     {
       "fullName": "kleosr/cursordoctrine",
@@ -9,7 +9,7 @@
       "forksCount": 1,
       "language": "JavaScript",
       "license": "MIT",
-      "pushedAt": "2026-08-20T04:50:09Z",
+      "pushedAt": "2026-09-02T22:35:50Z",
       "topics": [
         "agents",
         "cursor",
@@ -24,7 +24,7 @@
       "forksCount": 41,
       "language": null,
       "license": "Other",
-      "pushedAt": "2026-08-20T04:50:00Z",
+      "pushedAt": "2026-09-02T22:35:52Z",
       "topics": [
         "agent-memory",
         "ai",
@@ -39,9 +39,9 @@
       "htmlUrl": "https://github.com/kleosr/veredicto",
       "stargazersCount": 1,
       "forksCount": 0,
-      "language": "JavaScript",
+      "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-08-20T04:50:05Z",
+      "pushedAt": "2026-09-02T22:35:50Z",
       "topics": [
         "coding-agents",
         "language-server",
@@ -56,7 +56,7 @@
       "forksCount": 0,
       "language": "Shell",
       "license": "MIT",
-      "pushedAt": "2026-08-31T02:17:45Z",
+      "pushedAt": "2026-09-02T22:35:46Z",
       "topics": [
         "bash",
         "cursor",
@@ -72,7 +72,7 @@
       "forksCount": 0,
       "language": null,
       "license": "MIT",
-      "pushedAt": "2026-08-20T04:50:03Z",
+      "pushedAt": "2026-09-02T22:35:51Z",
       "topics": [
         "accessibility",
         "cursor",
@@ -88,7 +88,7 @@
       "forksCount": 0,
       "language": "Rust",
       "license": null,
-      "pushedAt": "2026-08-20T04:50:10Z",
+      "pushedAt": "2026-09-02T22:35:49Z",
       "topics": [
         "cli",
         "llm",
