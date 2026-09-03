@@ -3,12 +3,13 @@ import { useEffect } from "react";
 export function useReveal(): void {
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>("[data-reveal]");
-    const readyTimer = window.setTimeout(() => document.body.classList.add("is-ready"), 60);
-
-    if (!("IntersectionObserver" in window)) {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced || !("IntersectionObserver" in window)) {
       elements.forEach((element) => element.classList.add("is-visible"));
-      return () => window.clearTimeout(readyTimer);
+      return undefined;
     }
+
+    const readyTimer = window.setTimeout(() => document.body.classList.add("is-ready"), 60);
 
     const mobile = window.matchMedia("(max-width: 39.99rem)").matches;
     const observer = new IntersectionObserver(
