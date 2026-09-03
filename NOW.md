@@ -11,4 +11,5 @@ Proof
 pnpm check exit 0. pnpm build exit 0.
 
 Next
-Review 390 and 1280 on the PR. Deploy to Surge after merge.
+Review or merge PR #9: https://github.com/kleosr/kleosr-portfolio/pull/9
+Deploy to Surge after merge.
