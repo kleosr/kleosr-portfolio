@@ -1,0 +1,39 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "craft/grok-bay-page",
+    "craft/grok-instrument",
+    "craft/home-operator-index",
+    "craft/motion-dead-surface",
+    "cursor/agents-handbook-88f1",
+    "cursor/craft-pass-instrument-517d",
+    "cursor/quality-gates-8306",
+    "cursor/unified-design-system-3cd5",
+    "fix/grok-bay-plate-label",
+    "main"
+  ],
+  "parent": {
+    "craft/grok-bay-page": "main",
+    "craft/grok-instrument": "main",
+    "craft/home-operator-index": "main",
+    "craft/motion-dead-surface": "main",
+    "cursor/agents-handbook-88f1": "main",
+    "cursor/craft-pass-instrument-517d": "main",
+    "cursor/quality-gates-8306": "main",
+    "cursor/unified-design-system-3cd5": "main",
+    "fix/grok-bay-plate-label": "main",
+    "main": null
+  },
+  "order": [
+    "main",
+    "craft/grok-bay-page",
+    "craft/grok-instrument",
+    "craft/home-operator-index",
+    "craft/motion-dead-surface",
+    "cursor/agents-handbook-88f1",
+    "cursor/craft-pass-instrument-517d",
+    "cursor/quality-gates-8306",
+    "cursor/unified-design-system-3cd5",
+    "fix/grok-bay-plate-label"
+  ]
+}
