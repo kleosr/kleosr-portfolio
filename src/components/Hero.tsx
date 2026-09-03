@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import type { Tool } from "../content";
-import { PosterVisual } from "./PosterVisual";
+import { Plate } from "./system";
 
 const heroVisual = {
   src: "/images/kleosr-hero-guardian.png",
@@ -33,13 +33,19 @@ export function Hero(): ReactElement {
         </p>
       </div>
 
-      <figure className="hero-visual" data-reveal>
-        <PosterVisual visual={heroVisual} index="PLATE / 00" priority />
-        <figcaption>
-          <span>MYTH / MACHINE</span>
-          <span>BUILD 2026.08</span>
-        </figcaption>
-      </figure>
+      <Plate
+        className="hero-visual"
+        visual={heroVisual}
+        index="PLATE / 00"
+        priority
+        reveal
+        figcaption={
+          <figcaption>
+            <span>MYTH / MACHINE</span>
+            <span>BUILD 2026.08</span>
+          </figcaption>
+        }
+      />
     </section>
   );
 }

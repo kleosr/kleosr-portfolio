@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import { proofCopy } from "../content";
 import { proofFigures } from "../data/proof";
+import { ProofFigure, SectionHeader } from "./system";
 
 export function ProofBand(): ReactElement | null {
   const figures = proofFigures();
@@ -8,20 +9,21 @@ export function ProofBand(): ReactElement | null {
 
   return (
     <section className="section proof-section" id="proof" aria-labelledby="proof-title">
-      <header className="section-heading" data-reveal>
-        <p>{proofCopy.kicker}</p>
-        <div>
-          <h2 id="proof-title">{proofCopy.title}</h2>
-          <span className="section-code">{proofCopy.code}</span>
-        </div>
-      </header>
+      <SectionHeader
+        kicker={proofCopy.kicker}
+        title={proofCopy.title}
+        titleId="proof-title"
+        code={proofCopy.code}
+        reveal
+      />
       <ul className="proof-figures" data-reveal>
         {figures.map((figure) => (
-          <li className="proof-figure" key={figure.label}>
-            <p>{figure.kicker}</p>
-            <data value={figure.value}>{figure.value}</data>
-            <h3>{figure.label}</h3>
-          </li>
+          <ProofFigure
+            key={figure.label}
+            kicker={figure.kicker}
+            value={figure.value}
+            label={figure.label}
+          />
         ))}
       </ul>
     </section>

@@ -1,9 +1,9 @@
 import { useRef, type ReactElement } from "react";
-import { crewSeatCount, grokCopy, grokHeroVisual } from "../grok-content";
+import { crewSeatCount, grokCopy, grokHeroVisual, grokPlateCopy } from "../grok-content";
 import { useGrokMotion } from "../hooks/useGrokMotion";
 import { GrokCrew } from "./GrokCrew";
 import { GrokLogo } from "./GrokLogo";
-import { PosterVisual } from "./PosterVisual";
+import { Kicker, Link, Plate } from "./system";
 
 export function GrokPage(): ReactElement {
   const pageRef = useRef<HTMLDivElement>(null);
@@ -17,23 +17,25 @@ export function GrokPage(): ReactElement {
       <div className="grain" aria-hidden="true" />
 
       <header className="grok-nav">
-        <a className="grok-brand" href="/" aria-label="Back to kleosr">
+        <Link className="grok-brand" href="/" aria-label="Back to kleosr">
           kleos<span>r</span>
-        </a>
+        </Link>
         <span>[ GROK BOT / MISSION BAY ]</span>
-        <a className="grok-jump" href="#crew">
+        <Link className="grok-jump" href="#crew">
           [ CREW ]
-        </a>
+        </Link>
       </header>
 
       <main id="mission">
         <section className="grok-hero" aria-labelledby="grok-page-title">
           <div className="grok-hero-copy">
-            <p className="grok-meta" data-grok-fade="hero">
-              <data value={crewSeatCount}>{`UNIT / ${String(crewSeatCount).padStart(2, "0")}`}</data>
-              <span>REV 2026.08</span>
-              <span>SCOPE / SESSION</span>
-            </p>
+            <div className="grok-meta" data-grok-fade="hero">
+              <Kicker>
+                <data value={crewSeatCount}>{`UNIT / ${String(crewSeatCount).padStart(2, "0")}`}</data>
+              </Kicker>
+              <Kicker>REV 2026.08</Kicker>
+              <Kicker>SCOPE / SESSION</Kicker>
+            </div>
             <p className="grok-unit" aria-hidden="true">
               {String(crewSeatCount).padStart(2, "0")}
             </p>
@@ -49,9 +51,16 @@ export function GrokPage(): ReactElement {
             </p>
           </div>
 
-          <figure className="grok-hero-visual grok-frame" data-grok-fade="hero">
-            <PosterVisual visual={grokHeroVisual} index="PLATE / GB" priority chrome="still" scanline />
-          </figure>
+          <Plate
+            className="grok-hero-visual grok-frame"
+            aspect="4:5"
+            visual={grokHeroVisual}
+            index={grokPlateCopy.plate}
+            priority
+            chrome="still"
+            scanline
+            fade="hero"
+          />
         </section>
 
         <GrokCrew />

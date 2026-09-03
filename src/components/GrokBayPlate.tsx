@@ -1,18 +1,20 @@
 import type { ReactElement } from "react";
 import { grokBayVisual, grokPlateCopy, type GrokAgent } from "../grok-content";
-import { PosterVisual } from "./PosterVisual";
+import { Plate } from "./system";
 
 export function GrokBayPlate({ agent }: { agent: GrokAgent }): ReactElement {
   return (
-    <figure className="grok-bay grok-frame" id="bay" data-grok-fade="crew">
-      <PosterVisual
-        visual={grokBayVisual}
-        index={grokPlateCopy.plate}
-        meta={`${grokPlateCopy.seat} / ${agent.number}`}
-        priority
-        chrome="still"
-        scanline
-      />
+    <Plate
+      className="grok-bay grok-frame"
+      id="bay"
+      fade="crew"
+      aspect="4:5"
+      visual={grokBayVisual}
+      index={`${grokPlateCopy.seat} / ${agent.number}`}
+      priority
+      chrome="still"
+      scanline
+    >
       <div className="grok-bay-brief">
         <p className="grok-seat-vector">{agent.channel}</p>
         <h3>{agent.name}</h3>
@@ -30,6 +32,6 @@ export function GrokBayPlate({ agent }: { agent: GrokAgent }): ReactElement {
           {` ${agent.anti}`}
         </p>
       </div>
-    </figure>
+    </Plate>
   );
 }

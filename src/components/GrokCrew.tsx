@@ -1,7 +1,7 @@
 import { useState, type KeyboardEvent, type ReactElement } from "react";
 import { grokAgents, grokAgentIndex, grokCopy } from "../grok-content";
 import { GrokBayPlate } from "./GrokBayPlate";
-import { GrokSeat } from "./GrokSeat";
+import { Row, SectionHeader } from "./system";
 
 export function GrokCrew(): ReactElement {
   const [active, setActive] = useState(0);
@@ -26,11 +26,14 @@ export function GrokCrew(): ReactElement {
 
   return (
     <section className="grok-crew" id="crew" aria-labelledby="crew-title">
-      <header data-grok-fade="crew">
-        <p>{grokCopy.crewKicker}</p>
-        <h2 id="crew-title">{grokCopy.crewTitle}</h2>
-        <span>{grokCopy.crewHint}</span>
-      </header>
+      <SectionHeader
+        className="grok-crew-header"
+        kicker={grokCopy.crewKicker}
+        title={grokCopy.crewTitle}
+        titleId="crew-title"
+        hint={<span className="grok-crew-hint">{grokCopy.crewHint}</span>}
+        fade="crew"
+      />
       <div className="sr-only" aria-live="polite">
         {locked.number} {locked.name}
       </div>
@@ -39,7 +42,8 @@ export function GrokCrew(): ReactElement {
         <ol className="grok-agent-list" onKeyDown={onListKey}>
           {grokAgents.map((agent, index) => (
             <li key={agent.number} data-grok-fade="crew">
-              <GrokSeat
+              <Row
+                variant="crew-seat"
                 agent={agent}
                 pressed={index === active}
                 onLock={() => setActive(index)}

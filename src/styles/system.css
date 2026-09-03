@@ -1,0 +1,34 @@
+.ds-kicker {
+  margin: 0.45rem 0 0;
+  color: var(--orange);
+  font: 600 var(--type-kicker)/1 var(--mono);
+  letter-spacing: 0.08em;
+}
+
+.ds-index {
+  color: var(--muted-light);
+  font: 600 var(--type-kicker)/1 var(--mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+}
+
+.ds-plate {
+  margin: 0;
+}
+
+.plate-aspect-45 .poster-visual {
+  aspect-ratio: 4 / 5;
+}
+
+.grok-crew header .ds-kicker {
+  margin: 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.grok-meta .ds-kicker {
+  margin: 0;
+  color: var(--muted-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
