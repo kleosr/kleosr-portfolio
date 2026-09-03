@@ -81,27 +81,6 @@ html {
   }
 }
 
-@media (hover: none) {
-  .nav-link:hover,
-  .grok-brand:hover,
-  .grok-jump:hover,
-  .tool-source:hover,
-  .tool-catalog-row:hover,
-  .tool-catalog-row:hover strong,
-  .tool-header h3 a:hover,
-  .contact-github:hover,
-  .contact-github:hover span::after,
-  .grok-seat:hover,
-  .grok-seat:hover strong {
-    color: inherit;
-    background-color: transparent;
-  }
-
-  .tool-catalog-row:hover strong {
-    color: inherit;
-  }
-}
-
 body {
   min-width: 320px;
   min-height: 100vh;

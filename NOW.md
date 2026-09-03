@@ -1,14 +1,14 @@
 Now
-Grok seat rail no longer overlaps. Rows size to title + job + vector.
+Unified home and /grok-bot/ as one instrument across components, layout, motion, and buttons.
 
 State
-Desktop seats were flex-shrunk into the 4:5 plate height. That is removed. Plate and rail stay top-aligned. Home untouched.
+PR #4 updated with touch-hover cleanup and merged with origin/main (AGENTS.md). Static deployment to Surge kleosr.surge.sh ready.
 
 Limits
-Hard-refresh after Surge. `dist/CNAME` stays untracked.
+Hard-refresh after Surge. dist/CNAME stays untracked.
 
 Proof
-`pnpm build` exit 0. Chrome 1280: zero seat overlaps, each row ~95px, title/job/vector stacked.
+pnpm check and pnpm build exit 0. Viewports 390, 430, 768, 1280 (normal & reduced motion) audited clean.
 
 Next
-Publish if Mario wants the live bay updated.
+Deploy to kleosr.surge.sh and verify live response.
