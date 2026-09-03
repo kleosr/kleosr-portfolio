@@ -17,7 +17,7 @@ function ToolDock({ tool }: { tool: Tool }): ReactElement {
           <AnimatedIcon name={tool.icon} />
           <span className="tool-number">{tool.number}</span>
           <h3>
-            <a href={tool.href} target="_blank" rel="noreferrer">
+            <a className="tool-title-link" href={tool.href} target="_blank" rel="noreferrer">
               {tool.name}
             </a>
           </h3>

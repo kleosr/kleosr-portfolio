@@ -1,14 +1,15 @@
 Now
-Grok-bot plates are eager. Logo SVG is sized. No lazy imgs on that page.
+Now
+Unified home and /grok-bot/ as one instrument across components, layout, motion, and buttons. Plates eager and logo SVG sized.
 
 State
-Bay `PosterVisual` uses `priority` like hero. `GrokLogo` has width/height 32. Home tools still lazy.
+PR #4 merged to main. All defects resolved: plate chrome within frame, no duplicate lock/figcaption, aligned desktop geometry, 44px tap targets, reduced motion static orbit, touch hover cleaned up.
 
 Limits
-Live surge still has the old bay `loading=lazy` until deploy.
+Hard-refresh after Surge. dist/CNAME stays untracked.
 
 Proof
-`pnpm check` exit 0. `pnpm build` exit 0. Preview `/grok-bot/`: both plates `loading=eager`, `lazyCount` 0, logo `svg[width=32][height=32]`.
+pnpm check and pnpm build exit 0. Viewports 390, 430, 768, 1280 (normal & reduced motion) audited clean.
 
 Next
-Mario: deploy if live should match. Hard-refresh `/grok-bot/` after.
+Deploy to kleosr.surge.sh and verify live response.

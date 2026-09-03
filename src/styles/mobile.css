@@ -1,6 +1,11 @@
 @media (max-width: 39.99rem) {
   .hero,
-  .section {
+  .section,
+  .section.tools-section,
+  .section.catalog-section,
+  .section.proof-section,
+  .section.about-section,
+  .section.contact-section {
     scroll-margin-top: 5.25rem;
   }
 
@@ -88,7 +93,13 @@
 
   .section-heading {
     margin-bottom: 2rem;
-    grid-template-columns: 3.4rem minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+  }
+
+  .section-heading > p {
+    margin: 0;
+    white-space: nowrap;
   }
 
   .section-heading h2 {
@@ -105,6 +116,7 @@
   .tool-orbit {
     min-height: 0;
     margin-left: 0;
+    overflow: hidden;
   }
 
   .tool-orbit-card {
@@ -162,8 +174,25 @@
     font-size: 0.5rem;
   }
 
+  .tool-catalog-row {
+    padding: 0.75rem 0;
+    gap: 0.65rem 0.85rem;
+  }
+
+  .tool-catalog-row strong {
+    font-size: 0.95rem;
+  }
+
+  .tool-catalog-row p {
+    font-size: 0.85rem;
+  }
+
   .about-spec {
     min-height: 18rem;
+  }
+
+  .about-spec > span {
+    white-space: nowrap;
   }
 
   .about-spec strong {

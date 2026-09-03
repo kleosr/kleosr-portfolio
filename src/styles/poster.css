@@ -122,8 +122,35 @@
   letter-spacing: 0.1em;
 }
 
+.poster-meta {
+  position: absolute;
+  z-index: 4;
+  top: 0.65rem;
+  right: 0.65rem;
+  padding: 0.3rem 0.45rem;
+  background: var(--black);
+  color: var(--cream);
+  font: 500 0.46rem/1 var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.poster-scanline {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgb(0 0 0 / 14%) 3px,
+    rgb(0 0 0 / 14%) 4px
+  );
+  pointer-events: none;
+}
+
 .hero-visual .poster-visual {
   border: 1px solid var(--ink);
-  border-radius: 4px;
+  border-radius: var(--radius-md);
   box-shadow: 1rem 1rem 0 var(--orange);
 }
