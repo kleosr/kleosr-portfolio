@@ -3,7 +3,7 @@ import { tools, toolsCopy, type Tool } from "../content";
 import { githubRepo, snapshotDay } from "../data/github";
 import { useToolOrbit } from "../hooks/useToolOrbit";
 import { AnimatedIcon } from "./AnimatedIcon";
-import { PosterVisual } from "./PosterVisual";
+import { Link, Plate, SectionHeader } from "./system";
 
 const slotStep = 360 / tools.length;
 
@@ -17,9 +17,9 @@ function ToolDock({ tool }: { tool: Tool }): ReactElement {
           <AnimatedIcon name={tool.icon} />
           <span className="tool-number">{tool.number}</span>
           <h3>
-            <a className="tool-title-link" href={tool.href} target="_blank" rel="noreferrer">
+            <Link className="tool-title-link" href={tool.href} external>
               {tool.name}
-            </a>
+            </Link>
           </h3>
         </div>
       </header>
@@ -30,9 +30,9 @@ function ToolDock({ tool }: { tool: Tool }): ReactElement {
         ))}
       </ul>
       <p className="tool-meta">
-        <a className="tool-source" href={tool.href} target="_blank" rel="noreferrer">
+        <Link className="tool-source" href={tool.href} external>
           {toolsCopy.openSource}
-        </a>
+        </Link>
         {record ? (
           <data className="tool-stars" value={record.stargazersCount}>
             {record.stargazersCount} {toolsCopy.stars}
@@ -57,13 +57,13 @@ export function Tools(): ReactElement {
 
   return (
     <section ref={sectionRef} className="section tools-section" id="tools" aria-labelledby="tools-title">
-      <header className="section-heading" data-reveal>
-        <p>{toolsCopy.kicker}</p>
-        <div>
-          <h2 id="tools-title">{toolsCopy.title}</h2>
-          <span className="section-code">{toolsCopy.code}</span>
-        </div>
-      </header>
+      <SectionHeader
+        kicker={toolsCopy.kicker}
+        title={toolsCopy.title}
+        titleId="tools-title"
+        code={toolsCopy.code}
+        reveal
+      />
       <div className="tool-orbit-hold">
         <div className="tool-orbit">
           <div className="tool-orbit-track" aria-hidden="true" />
@@ -77,7 +77,12 @@ export function Tools(): ReactElement {
                 <div
                   className={item.name === "cursordoctrine" ? "tool-orbit-card is-flipped" : "tool-orbit-card"}
                 >
-                  <PosterVisual visual={item.visual} index={`PLATE / ${item.number}`} chrome="still" />
+                  <Plate
+                    visual={item.visual}
+                    index={`PLATE / ${item.number}`}
+                    chrome="still"
+                    className="tool-orbit-plate"
+                  />
                   <span className="tool-orbit-name">{item.name}</span>
                 </div>
               </div>

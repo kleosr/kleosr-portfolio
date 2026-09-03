@@ -72,6 +72,14 @@
   border-radius: 0;
 }
 
+.tool-orbit-plate {
+  margin: 0;
+}
+
+.tool-orbit-plate .poster-visual {
+  border-radius: 0;
+}
+
 .tool-orbit-card.is-flipped img {
   transform: scaleX(-1);
 }

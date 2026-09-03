@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./theme.css";
+@import "./system.css";
 @import "./page-transition.css";
 @import "./vision.css";
 @import "./poster.css";
