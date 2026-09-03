@@ -119,10 +119,12 @@ button:focus-visible {
 .skip-link,
 .grok-brand,
 .grok-jump,
+.grok-control,
 .tool-source,
 .tool-catalog-row,
 .contact-github,
-.grok-seat {
+.grok-seat,
+.grok-mission {
   transition:
     color var(--duration) var(--ease),
     background-color var(--duration) var(--ease),
@@ -134,6 +136,7 @@ button:focus-visible {
 .nav-link:active,
 .grok-brand:active,
 .grok-jump:active,
+.grok-control:active,
 .tool-source:active,
 .tool-header h3 a:active {
   transform: scale(0.98);

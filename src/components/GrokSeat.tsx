@@ -1,5 +1,6 @@
 import type { KeyboardEvent, ReactElement } from "react";
 import type { GrokAgent } from "../grok-content";
+import { GrokIndex } from "./GrokUi";
 
 type GrokSeatProps = {
   agent: GrokAgent;
@@ -17,12 +18,12 @@ export function GrokSeat({ agent, pressed, onLock, onKeyDown }: GrokSeatProps): 
       onClick={onLock}
       onKeyDown={onKeyDown}
     >
-      <span className="grok-seat-index">{agent.number}</span>
+      <GrokIndex value={agent.number} />
       <span className="grok-seat-body">
         <strong>{agent.name}</strong>
         <p>{agent.role}</p>
       </span>
-      <span className="grok-seat-vector">{agent.channel}</span>
+      <span className="grok-vector">{agent.channel}</span>
     </button>
   );
 }
