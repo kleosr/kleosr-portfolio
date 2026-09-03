@@ -9,6 +9,11 @@ export type GrokAgent = {
   anti: string;
 };
 
+export type GrokMission = {
+  seat: number;
+  label: string;
+};
+
 export const grokAgents: readonly GrokAgent[] = [
   {
     number: "01",
@@ -70,11 +75,36 @@ export const grokAgents: readonly GrokAgent[] = [
 
 export const crewSeatCount = grokAgents.length;
 
+export const grokMissions: readonly GrokMission[] = [
+  { seat: 0, label: "Blocked handoff" },
+  { seat: 1, label: "What we will not add" },
+  { seat: 2, label: "What waits" },
+  { seat: 4, label: "Proof the fix holds" },
+  { seat: 6, label: "Env that can fail the build" },
+];
+
 export const grokCopy = {
   lead: `${crewSeatCount} agents behind my Cursor sessions. Each one owns a seat.`,
+  heroKicker: `UNIT / ${String(crewSeatCount).padStart(2, "0")}`,
+  heroRev: "REV 2026.08",
+  heroScope: "SCOPE / SESSION",
+  heroTitle: "Flight crew.",
+  heroLine: "Seven seats. One lock.",
+  lockSeat: "Lock seat 01",
+  home: "Home",
+  crewJump: "CREW",
+  navMark: "GROK BOT / BAY",
   crewKicker: "01 / Flight crew",
-  crewTitle: `${crewSeatCount} agents. Clear ownership.`,
+  crewTitle: "Lock a seat.",
   crewHint: "Arrow keys move the lock.",
+  missionKicker: "02 / Missions",
+  missionTitle: "Lock from a live problem.",
+  closeKicker: "03 / Next",
+  closeTitle: "The bay stays open.",
+  closeLead: "Home, the GitHub door, or lock a seat.",
+  github: "GitHub",
+  footerMark: "KLEOSR / GROK BOT",
+  footerRev: "REV 2026",
 } as const;
 
 export const grokPlateCopy = {
@@ -83,14 +113,6 @@ export const grokPlateCopy = {
   owns: "OWNS",
   anti: "ANTI",
 } as const;
-
-export const grokHeroVisual = {
-  src: "/images/grok-bot-hero.png",
-  alt: "Grok Bot sculpture in a kleosr command bay",
-  agent: "GROK_BOT",
-  status: "BAY / ONLINE",
-  code: [`crew: ${crewSeatCount}`, "scope: session", "tree: clean"],
-} satisfies Tool["visual"];
 
 export const grokBayVisual = {
   src: "/images/grok-bot-bay.png",

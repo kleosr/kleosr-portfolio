@@ -1,4 +1,5 @@
-.grok-crew {
+.grok-crew,
+.grok-missions {
   scroll-margin-top: 1rem;
   padding: 3.25rem 1.25rem 2.75rem;
   padding-right: max(1.25rem, env(safe-area-inset-right));
@@ -6,18 +7,10 @@
   border-top: 1px solid var(--hairline-cream);
 }
 
-.grok-crew header {
+.grok-crew header,
+.grok-missions header {
   max-width: 40rem;
   margin-bottom: 1.25rem;
-}
-
-.grok-crew header p,
-.grok-lock {
-  margin: 0;
-  color: var(--orange);
-  font: 600 var(--type-kicker)/1 var(--mono);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .grok-crew h2 {
@@ -32,22 +25,6 @@
 .grok-crew header span {
   color: var(--muted-light);
   font-size: 0.9375rem;
-}
-
-.grok-lock {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 0 1.5rem;
-  align-items: baseline;
-  gap: 0.65rem 1rem;
-  color: var(--cream);
-}
-
-.grok-lock span { color: var(--orange); }
-
-.grok-lock strong {
-  font-weight: 600;
-  letter-spacing: 0.08em;
 }
 
 .grok-bay-split {
@@ -69,16 +46,6 @@
 .grok-bay .poster-visual {
   height: 100%;
   max-height: min(72vh, 36rem);
-}
-
-.grok-bay.grok-frame figcaption {
-  top: 0.65rem;
-  right: 0.65rem;
-  bottom: auto;
-  left: 0.65rem;
-  display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
 }
 
 .grok-bay-brief {
@@ -117,7 +84,7 @@
 .grok-bay-anti span {
   margin: 0;
   color: var(--orange);
-  font: 600 var(--type-kicker)/1 var(--mono);
+  font: 600 var(--type-kicker) / 1 var(--mono);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -146,7 +113,8 @@
   margin-right: 0.5rem;
 }
 
-.grok-agent-list {
+.grok-agent-list,
+.grok-missions ul {
   display: flex;
   margin: 0;
   padding: 0;
@@ -156,14 +124,17 @@
   list-style: none;
 }
 
-.grok-agent-list li { min-width: 0; }
+.grok-agent-list li,
+.grok-missions li {
+  min-width: 0;
+}
 
-.grok-seat {
+.grok-seat,
+.grok-mission {
   display: grid;
   width: 100%;
   min-height: 44px;
   padding: 0.7rem 0.65rem;
-  grid-template-columns: 2rem minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.75rem 1rem;
   border: 0;
@@ -176,9 +147,17 @@
   transition: transform var(--duration) var(--ease);
 }
 
-.grok-seat-index {
+.grok-seat {
+  grid-template-columns: 2rem minmax(0, 1fr) auto;
+}
+
+.grok-mission {
+  grid-template-columns: 2rem minmax(0, 1fr) auto;
+}
+
+.grok-index {
   color: var(--muted-light);
-  font: 600 var(--type-kicker)/1 var(--mono);
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.1em;
 }
@@ -191,7 +170,8 @@
   gap: 0.35rem;
 }
 
-.grok-seat strong {
+.grok-seat strong,
+.grok-mission strong {
   display: block;
   font-size: 1.05rem;
   font-weight: 600;
@@ -206,43 +186,48 @@
   line-height: 1.4;
 }
 
-.grok-seat-vector {
+.grok-vector {
   display: inline-block;
   align-self: center;
-  margin-top: 0;
   padding: 0.2rem 0.4rem;
   border: 1px solid var(--hairline-cream);
   border-radius: var(--radius-sm);
   color: var(--cream);
-  font: 600 var(--type-kicker)/1 var(--mono);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 600;
   white-space: nowrap;
 }
 
-.grok-bay-brief .grok-seat-vector {
+.grok-bay-brief .grok-vector {
   margin-top: 0;
 }
 
-.grok-seat[aria-pressed="true"] {
+.grok-seat[aria-pressed="true"],
+.grok-mission[aria-pressed="true"] {
   border-left-color: var(--orange);
   box-shadow: inset 2px 0 0 var(--orange);
 }
 
-.grok-seat[aria-pressed="true"] .grok-seat-index,
-.grok-seat[aria-pressed="true"] strong {
+.grok-seat[aria-pressed="true"] .grok-index,
+.grok-seat[aria-pressed="true"] strong,
+.grok-mission[aria-pressed="true"] .grok-index,
+.grok-mission[aria-pressed="true"] strong {
   color: var(--orange);
 }
 
-.grok-seat:focus-visible {
+.grok-seat:focus-visible,
+.grok-mission:focus-visible {
   outline: 2px solid var(--orange-hot);
   outline-offset: 2px;
 }
 
-.grok-seat:active {
+.grok-seat:active,
+.grok-mission:active {
   transform: scale(0.98);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .grok-seat:hover strong { color: var(--cream); }
+  .grok-seat:hover strong,
+  .grok-mission:hover strong {
+    color: var(--cream);
+  }
 }

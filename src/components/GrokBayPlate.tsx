@@ -1,8 +1,12 @@
-import type { ReactElement } from "react";
+import { useRef, type ReactElement } from "react";
 import { grokBayVisual, grokPlateCopy, type GrokAgent } from "../grok-content";
+import { useGrokPlate } from "../hooks/useGrokPlate";
 import { PosterVisual } from "./PosterVisual";
 
 export function GrokBayPlate({ agent }: { agent: GrokAgent }): ReactElement {
+  const briefRef = useRef<HTMLDivElement>(null);
+  useGrokPlate(briefRef, agent.number);
+
   return (
     <figure className="grok-bay grok-frame" id="bay" data-grok-fade="crew">
       <PosterVisual
@@ -13,8 +17,8 @@ export function GrokBayPlate({ agent }: { agent: GrokAgent }): ReactElement {
         chrome="still"
         scanline
       />
-      <div className="grok-bay-brief">
-        <p className="grok-seat-vector">{agent.channel}</p>
+      <div className="grok-bay-brief" ref={briefRef}>
+        <p className="grok-vector">{agent.channel}</p>
         <h3>{agent.name}</h3>
         <p>{agent.role}</p>
         <div className="grok-bay-owns">
