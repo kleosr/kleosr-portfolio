@@ -1,14 +1,14 @@
 Now
-Grok seat rail no longer overlaps. Rows size to title + job + vector.
+Grok-bot plates are eager. Logo SVG is sized. No lazy imgs on that page.
 
 State
-Desktop seats were flex-shrunk into the 4:5 plate height. That is removed. Plate and rail stay top-aligned. Home untouched.
+Bay `PosterVisual` uses `priority` like hero. `GrokLogo` has width/height 32. Home tools still lazy.
 
 Limits
-Hard-refresh after Surge. `dist/CNAME` stays untracked.
+Live surge still has the old bay `loading=lazy` until deploy.
 
 Proof
-`pnpm build` exit 0. Chrome 1280: zero seat overlaps, each row ~95px, title/job/vector stacked.
+`pnpm check` exit 0. `pnpm build` exit 0. Preview `/grok-bot/`: both plates `loading=eager`, `lazyCount` 0, logo `svg[width=32][height=32]`.
 
 Next
-Publish if Mario wants the live bay updated.
+Mario: deploy if live should match. Hard-refresh `/grok-bot/` after.
