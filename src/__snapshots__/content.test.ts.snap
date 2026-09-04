@@ -1,0 +1,314 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`content helpers > pins operator copy 1`] = `
+[
+  {
+    "description": "Cursor hook pack: doctrine at session start, Step 0 hard gate on writes, shell deny-list without force-push, and one final review at stop.",
+    "fullName": "kleosr/cursordoctrine",
+    "href": "https://github.com/kleosr/cursordoctrine",
+    "icon": "shield",
+    "name": "cursordoctrine",
+    "number": "01",
+    "tags": [
+      "Hooks",
+      "JavaScript",
+      "Cursor",
+    ],
+    "visual": {
+      "agent": "AGENT_01",
+      "alt": "Line-art Greek guardian framed by technical construction marks",
+      "code": [
+        "beforeShell()",
+        "scope: repository",
+        "verdict: allow",
+      ],
+      "src": "/images/tool-doctrine-guardian.png",
+      "status": "SHELL_GUARD / ACTIVE",
+    },
+  },
+  {
+    "description": "One always-on Cursor rule plus root markdown state.",
+    "fullName": "kleosr/cursorkleosr",
+    "href": "https://github.com/kleosr/cursorkleosr",
+    "icon": "memory",
+    "install": "git clone https://github.com/kleosr/cursorkleosr.git",
+    "name": "cursorkleosr",
+    "number": "02",
+    "tags": [
+      "Memory",
+      "Markdown",
+      "Cursor",
+    ],
+    "visual": {
+      "agent": "AGENT_02",
+      "alt": "Classical memory bust surrounded by state diagrams",
+      "code": [
+        "PROJECT.md",
+        "NOW.md",
+        "state: current",
+      ],
+      "src": "/images/tool-memory-bust.png",
+      "status": "MEMORY / SYNCED",
+    },
+  },
+  {
+    "description": "Agent-native TypeScript checker. Batch-verify candidate patches against a live project session and get structured JSON back.",
+    "fullName": "kleosr/veredicto",
+    "href": "https://github.com/kleosr/veredicto",
+    "icon": "verify",
+    "install": "npm install -g veredicto",
+    "name": "veredicto",
+    "number": "03",
+    "tags": [
+      "Verification",
+      "TypeScript",
+      "Node",
+    ],
+    "visual": {
+      "agent": "AGENT_03",
+      "alt": "Classical judge and scale integrated with a verification diagram",
+      "code": [
+        ""valid": true",
+        ""risk": "low"",
+        ""exit": 0",
+      ],
+      "src": "/images/tool-veredicto-judge.png",
+      "status": "VERDICT / PASS",
+    },
+  },
+]
+`;
+
+exports[`content helpers > pins operator copy 2`] = `
+[
+  {
+    "description": "Cursor harness pack. User Rules, companions, skills, Bash hooks, local NOW.md memory.",
+    "fullName": "kleosr/kleosrules",
+    "href": "https://github.com/kleosr/kleosrules",
+    "name": "kleosrules",
+    "number": "04",
+    "tags": [
+      "Hooks",
+      "Bash",
+      "Cursor",
+    ],
+  },
+  {
+    "description": "Orange-accented color theme for VS Code and Cursor.",
+    "fullName": "kleosr/orangesor-cursortheme",
+    "href": "https://github.com/kleosr/orangesor-cursortheme",
+    "name": "orangesor-cursortheme",
+    "number": "05",
+    "tags": [
+      "Theme",
+      "VS Code",
+      "Cursor",
+    ],
+  },
+  {
+    "description": "Drop in a rough prompt. Get back a PE2-structured prompt you can ship.",
+    "fullName": "kleosr/PE2-CLI",
+    "href": "https://github.com/kleosr/PE2-CLI",
+    "name": "PE2-CLI",
+    "number": "06",
+    "tags": [
+      "CLI",
+      "Rust",
+      "Prompts",
+    ],
+  },
+]
+`;
+
+exports[`content helpers > pins operator copy 3`] = `
+{
+  "code": "KLSR.PUBLIC_WORK / 0003",
+  "kicker": "01 / INDEX",
+  "openSource": "Open source",
+  "snapshotKicker": "GH / SNAPSHOT",
+  "stars": "stars",
+  "title": "Tools",
+}
+`;
+
+exports[`content helpers > pins operator copy 4`] = `
+{
+  "kicker": "CATALOG / 0003",
+  "snapshotKicker": "GH / SNAPSHOT",
+  "title": "Index",
+}
+`;
+
+exports[`content helpers > pins operator copy 5`] = `
+{
+  "code": "KLSR.LEDGER / SOURCE",
+  "featuredStars": "Featured stars",
+  "kicker": "02 / LEDGER",
+  "packs": "Public packs",
+  "packsKicker": "PACKS / LIST",
+  "seats": "Crew seats",
+  "seatsKicker": "GROK / CONTENT",
+  "snapshotKicker": "GH / SNAPSHOT",
+  "title": "Proof",
+}
+`;
+
+exports[`content helpers > pins operator copy 6`] = `
+{
+  "body": "I care about agents that remember the project, stay inside the repo, and do not wreck the tree. The public work is hooks, session memory, a TypeScript checker, a harness pack, a theme, and a prompt CLI.",
+  "close": "When I am not in the editor I am still in the same problem: make the next session cheaper than the last one.",
+  "code": "OPERATOR / KLEOSR",
+  "kicker": "03 / PROFILE",
+  "lead": "6 public packs.",
+  "name": "I am kleosr. I am a Cursor Ambassador.",
+  "title": "About",
+}
+`;
+
+exports[`content helpers > pins operator copy 7`] = `
+{
+  "after": " is the door until email is listed.",
+  "code": "KLSR.CHANNEL / 0001",
+  "kicker": "04 / SIGNAL",
+  "link": "GitHub",
+  "ready": "EXTERNAL_LINK / READY",
+  "title": "Contact",
+}
+`;
+
+exports[`content helpers > pins operator copy 8`] = `"https://github.com/kleosr"`;
+
+exports[`grok helpers > pins crew copy 1`] = `
+[
+  {
+    "anti": "Does not implement.",
+    "channel": "COMMAND",
+    "name": "Chief of Staff",
+    "number": "01",
+    "owns": [
+      "Who is on point",
+      "Handoff between seats",
+      "When the mission is blocked",
+    ],
+    "role": "Routes the mission and owns every handoff.",
+  },
+  {
+    "anti": "Does not paint UI.",
+    "channel": "VECTOR",
+    "name": "CTO",
+    "number": "02",
+    "owns": [
+      "Stack calls",
+      "Security constraints",
+      "What we will not add",
+    ],
+    "role": "Sets technical direction, standards, and security.",
+  },
+  {
+    "anti": "Does not merge under pressure.",
+    "channel": "FLIGHT",
+    "name": "Principal Architect",
+    "number": "03",
+    "owns": [
+      "Module edges",
+      "What is in scope",
+      "What waits",
+    ],
+    "role": "Defines boundaries before implementation begins.",
+  },
+  {
+    "anti": "Does not skip the checker.",
+    "channel": "BUILD",
+    "name": "Lead Engineer",
+    "number": "04",
+    "owns": [
+      "The diff",
+      "Types",
+      "Tree cleanliness",
+    ],
+    "role": "Builds the work and keeps the repository healthy.",
+  },
+  {
+    "anti": "Does not ship on vibe.",
+    "channel": "VERIFY",
+    "name": "QA / Bug Hunter",
+    "number": "05",
+    "owns": [
+      "Repro",
+      "Failing case",
+      "Proof the fix holds",
+    ],
+    "role": "Finds regressions and proves the repair.",
+  },
+  {
+    "anti": "Does not add a second aesthetic.",
+    "channel": "DESIGN",
+    "name": "Product Designer",
+    "number": "06",
+    "owns": [
+      "Layout contract",
+      "Tokens",
+      "Motion that earns its keep",
+    ],
+    "role": "Shapes the interaction and visual system.",
+  },
+  {
+    "anti": "Does not force-push main.",
+    "channel": "LAUNCH",
+    "name": "DevOps",
+    "number": "07",
+    "owns": [
+      "pnpm build",
+      "Surge",
+      "Env that can fail the build",
+    ],
+    "role": "Keeps builds, releases, and environments reliable.",
+  },
+]
+`;
+
+exports[`grok helpers > pins crew copy 2`] = `
+{
+  "crewHint": "Arrow keys move the lock.",
+  "crewKicker": "01 / Flight crew",
+  "crewTitle": "7 agents. Clear ownership.",
+  "lead": "7 agents behind my Cursor sessions. Each one owns a seat.",
+}
+`;
+
+exports[`grok helpers > pins crew copy 3`] = `
+{
+  "anti": "ANTI",
+  "owns": "OWNS",
+  "plate": "PLATE / GB",
+  "seat": "SEAT",
+}
+`;
+
+exports[`grok helpers > pins crew copy 4`] = `
+{
+  "agent": "GROK_BOT",
+  "alt": "Grok Bot sculpture in a kleosr command bay",
+  "code": [
+    "crew: 7",
+    "scope: session",
+    "tree: clean",
+  ],
+  "src": "/images/grok-bot-hero.png",
+  "status": "BAY / ONLINE",
+}
+`;
+
+exports[`grok helpers > pins crew copy 5`] = `
+{
+  "agent": "AGENT_BAY",
+  "alt": "Grok Bot head tracked in the mission bay",
+  "code": [
+    "channel: flight",
+    "handoff: owned",
+    "tree: clean",
+  ],
+  "src": "/images/grok-bot-bay.png",
+  "status": "CREW / LOCKED",
+}
+`;

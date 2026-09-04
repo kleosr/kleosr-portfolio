@@ -11,14 +11,17 @@ describe("VisionOverlay", () => {
         <VisionOverlay />
       </div>,
     );
-    expect(container.querySelector("canvas.overlay-canvas")).toHaveAttribute("aria-hidden", "true");
-    expect(FakeIntersectionObserver.instances.length).toBeGreaterThan(0);
+    const canvas = container.querySelector("canvas.overlay-canvas");
+    expect(canvas).toHaveAttribute("aria-hidden", "true");
+    expect(OVERLAY_COLOR).toBe("#e85a2a");
+    const first = FakeIntersectionObserver.instances.length;
+    expect(first).toBeGreaterThan(0);
     rerender(
       <div style={{ width: 200, height: 120 }}>
         <VisionOverlay seed={11} color="#12110f" assist />
       </div>,
     );
-    expect(OVERLAY_COLOR).toBe("#e85a2a");
+    expect(FakeIntersectionObserver.instances.length).toBeGreaterThan(first);
     unmount();
   });
 });

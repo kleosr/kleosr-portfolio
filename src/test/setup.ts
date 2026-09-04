@@ -15,6 +15,7 @@ function installScroll(): void {
   Element.prototype.scrollIntoView = function scrollIntoView() {
     return undefined;
   };
+  window.scrollTo = () => undefined;
 }
 
 function installImageDecode(): void {
@@ -23,12 +24,22 @@ function installImageDecode(): void {
   };
 }
 
-beforeEach(() => {
+function installObservers(): void {
   FakeIntersectionObserver.instances = [];
   FakeResizeObserver.instances = [];
   window.IntersectionObserver = FakeIntersectionObserver;
   window.ResizeObserver = FakeResizeObserver;
+}
+
+setMatchMedia();
+installObservers();
+installCanvas();
+installImageDecode();
+installScroll();
+
+beforeEach(() => {
   setMatchMedia();
+  installObservers();
   installCanvas();
   installImageDecode();
   installScroll();

@@ -1,4 +1,5 @@
 import { createElement } from "react";
+import { act } from "react";
 import { describe, expect, it } from "vitest";
 import { mountRoot } from "./mount";
 
@@ -7,11 +8,12 @@ describe("mountRoot", () => {
     expect(() => mountRoot(createElement("div"))).toThrow("Root element is missing");
   });
 
-  it("renders into #root", () => {
+  it("renders into #root", async () => {
     const root = document.createElement("div");
     root.id = "root";
     document.body.append(root);
     const tree = mountRoot(createElement("p", null, "hello"));
+    await act(async () => undefined);
     expect(root.textContent).toContain("hello");
     tree.unmount();
   });

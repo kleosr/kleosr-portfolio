@@ -33,5 +33,6 @@ export function useReveal(): void {
       observer.disconnect();
       document.body.classList.remove("is-ready");
     };
+    // Stryker disable next-line ArrayDeclaration: one-shot effect, constant deps are equivalent
   }, []);
 }

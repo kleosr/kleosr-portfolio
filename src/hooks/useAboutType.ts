@@ -3,7 +3,13 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { RefObject } from "react";
 
+// Stryker disable next-line CallExpression: plugin registration is module-load and idempotent
 gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+export function typedCopy(typeAttr: string | undefined, text: string | null): string {
+  if (typeAttr) return typeAttr;
+  return (text ?? "").trim();
+}
 
 function typeLine(el: HTMLElement, full: string): void {
   const cursor = { n: 0 };
@@ -34,7 +40,7 @@ export function useAboutType(sectionRef: RefObject<HTMLElement | null>): void {
       const el = sectionRef.current?.querySelector<HTMLElement>(".about-type");
       if (!el) return;
 
-      const full = el.dataset.type ?? el.textContent?.trim() ?? "";
+      const full = typedCopy(el.dataset.type, el.textContent);
       if (!full) return;
 
       const mm = gsap.matchMedia();
