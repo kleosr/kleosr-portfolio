@@ -17,9 +17,9 @@ export type GithubSnapshot = {
   readonly repos: readonly GithubRepoRecord[];
 };
 
-export type JsonPrimitive = string | number | boolean | null;
-export type JsonObject = { readonly [key: string]: Json };
-export type JsonArray = readonly Json[];
+type JsonPrimitive = string | number | boolean | null;
+type JsonObject = { readonly [key: string]: Json };
+type JsonArray = readonly Json[];
 export type Json = JsonPrimitive | JsonObject | JsonArray;
 
 export function asJson(value: object): Json {

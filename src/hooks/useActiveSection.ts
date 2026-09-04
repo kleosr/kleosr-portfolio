@@ -30,6 +30,7 @@ export function useActiveSection(): string {
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
+    // Stryker disable next-line ArrayDeclaration: one-shot effect, constant deps are equivalent
   }, []);
 
   return activeSection;

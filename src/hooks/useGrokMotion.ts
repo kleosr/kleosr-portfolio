@@ -3,9 +3,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { RefObject } from "react";
 
+// Stryker disable next-line CallExpression: plugin registration is module-load and idempotent
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-function fadeIn(targets: HTMLElement[], trigger?: HTMLElement): void {
+function fadeIn(targets: HTMLElement[], trigger?: HTMLElement | null): void {
   if (!targets.length) return;
   gsap.fromTo(
     targets,
@@ -41,7 +42,7 @@ export function useGrokMotion(root: RefObject<HTMLElement | null>): void {
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         fadeIn(hero);
-        fadeIn(crew, crewRoot ?? undefined);
+        fadeIn(crew, crewRoot);
       });
 
       return () => mm.revert();

@@ -29,12 +29,16 @@ describe("useReveal", () => {
     window.IntersectionObserver = Original;
   });
 
-  it("observes desktop and mobile thresholds and unobserves on reveal", () => {
+  it("observes desktop thresholds, unobserves on reveal, and clears on unmount", () => {
     vi.useFakeTimers();
     const el = mountReveal();
     const { unmount } = renderHook(() => useReveal());
     act(() => {
-      vi.advanceTimersByTime(60);
+      vi.advanceTimersByTime(59);
+    });
+    expect(document.body.classList.contains("is-ready")).toBe(false);
+    act(() => {
+      vi.advanceTimersByTime(1);
     });
     expect(document.body.classList.contains("is-ready")).toBe(true);
     const observer = FakeIntersectionObserver.instances[0];
@@ -42,9 +46,12 @@ describe("useReveal", () => {
     expect(observer?.thresholds).toEqual([0.12]);
     observer?.trigger(false);
     expect(el.classList.contains("is-visible")).toBe(false);
+    expect(observer?.unobserved).toHaveLength(0);
     observer?.trigger(true);
     expect(el.classList.contains("is-visible")).toBe(true);
+    expect(observer?.unobserved).toContain(el);
     unmount();
+    expect(observer?.disconnected).toBe(true);
     expect(document.body.classList.contains("is-ready")).toBe(false);
     vi.useRealTimers();
   });

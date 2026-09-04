@@ -1,4 +1,4 @@
-export type AnchorKind = "point" | "cross" | "square";
+type AnchorKind = "point" | "cross" | "square";
 
 export type OverlayAnchor = {
   x: number;

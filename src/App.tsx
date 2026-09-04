@@ -18,6 +18,7 @@ export function App(): ReactElement {
     });
 
     return () => window.clearTimeout(timer);
+    // Stryker disable next-line ArrayDeclaration: one-shot hash scroll, constant deps are equivalent
   }, []);
 
   return (

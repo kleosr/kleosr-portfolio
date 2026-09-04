@@ -1,6 +1,6 @@
 import { act, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import { toolsCopy } from "../content";
+import { tools, toolsCopy } from "../content";
 import * as github from "../data/github";
 import { Tools } from "./Tools";
 
@@ -16,13 +16,25 @@ vi.mock("../hooks/useToolOrbit", () => ({
 
 describe("Tools", () => {
   it("flips the doctrine card and swaps the dock by orbit index", () => {
-    render(<Tools />);
+    const { container } = render(<Tools />);
+    expect(container.querySelector("section#tools.tools-section")).toBeTruthy();
     expect(screen.getByRole("heading", { name: "Tools" })).toBeInTheDocument();
+    expect(screen.getByText(toolsCopy.kicker)).toBeInTheDocument();
     expect(screen.getByText(toolsCopy.code)).toBeInTheDocument();
-    expect(document.querySelector(".tool-orbit-card.is-flipped")?.textContent).toContain(
-      "cursordoctrine",
-    );
+    const slots = [...container.querySelectorAll<HTMLElement>(".tool-orbit-slot")];
+    expect(slots).toHaveLength(tools.length);
+    const step = 360 / tools.length;
+    for (const [index, slot] of slots.entries()) {
+      expect(slot.style.getPropertyValue("--slot")).toBe(`${index * step}deg`);
+    }
+    const flipped = [...container.querySelectorAll(".tool-orbit-card.is-flipped")];
+    expect(flipped).toHaveLength(1);
+    expect(flipped[0]?.textContent).toContain("cursordoctrine");
     expect(screen.getByRole("heading", { name: "cursordoctrine" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "cursordoctrine" })).toHaveAttribute(
+      "href",
+      "https://github.com/kleosr/cursordoctrine",
+    );
     expect(screen.queryByText(/git clone/)).toBeNull();
     act(() => orbit.setActive(1));
     expect(screen.getByRole("heading", { name: "cursorkleosr" })).toBeInTheDocument();
@@ -30,6 +42,7 @@ describe("Tools", () => {
     act(() => orbit.setActive(2));
     expect(screen.getByText("npm install -g veredicto")).toBeInTheDocument();
     expect(screen.getByText(`${toolsCopy.snapshotKicker} ${github.snapshotDay()}`)).toBeInTheDocument();
+    expect(screen.getByText(toolsCopy.openSource)).toBeInTheDocument();
   });
 
   it("hides stars when a repo is missing from the snapshot", () => {

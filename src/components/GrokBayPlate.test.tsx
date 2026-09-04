@@ -10,7 +10,11 @@ describe("GrokBayPlate", () => {
     expect(screen.getByRole("heading", { name: agent.name })).toBeInTheDocument();
     expect(screen.getByText(grokPlateCopy.owns)).toBeInTheDocument();
     expect(screen.getByText(grokPlateCopy.anti)).toBeInTheDocument();
+    expect(screen.getByText(agent.role)).toBeInTheDocument();
+    expect(screen.getByText(agent.channel)).toBeInTheDocument();
     expect(screen.getByText(agent.owns[0] ?? "")).toBeInTheDocument();
+    expect(screen.getByText(agent.anti)).toBeInTheDocument();
+    expect(document.querySelector(".poster-index")?.textContent).toBe(grokPlateCopy.plate);
     expect(document.querySelector(".poster-meta")?.textContent).toBe(
       `${grokPlateCopy.seat} / ${agent.number}`,
     );

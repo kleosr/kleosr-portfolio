@@ -1,15 +1,14 @@
 Now
-Now
-Unified home and /grok-bot/ as one instrument across components, layout, motion, and buttons. Plates eager and logo SVG sized.
+Quality gates: cyclomatic < 22 (ESLint cap 10), cognitive < 22, Halstead < 80, LOC < 500, 100% coverage, CRAP < 25, no any/unknown, zero dead/redundant code, Stryker 100%.
 
 State
-PR #4 merged to main. All defects resolved: plate chrome within frame, no duplicate lock/figcaption, aligned desktop geometry, 44px tap targets, reduced motion static orbit, touch hover cleaned up.
+Toolchain and tests are in place on `cursor/quality-gates-8306`. `pnpm check`, `pnpm coverage`, `pnpm deadcode`, and `pnpm metrics` exit 0. Mutation score is the remaining bar (`pnpm mutate`, command runner, break at 100).
 
 Limits
-Hard-refresh after Surge. dist/CNAME stays untracked.
+Do not lower Stryker `thresholds.break` from 100. Do not use the Vitest Stryker runner (runtime mutants survive under Vitest 5). `dist/CNAME` stays untracked. Never query `api.github.com` from the browser.
 
 Proof
-pnpm check and pnpm build exit 0. Viewports 390, 430, 768, 1280 (normal & reduced motion) audited clean.
+`pnpm check && pnpm coverage && pnpm deadcode && pnpm metrics` exit 0. Coverage 481/481 stmts, 193/193 branches, 133/133 fns, 423/423 lines.
 
 Next
-Deploy to kleosr.surge.sh and verify live response.
+`pnpm mutate` must exit 0 (no surviving mutants), then `pnpm build`.

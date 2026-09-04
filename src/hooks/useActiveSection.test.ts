@@ -16,7 +16,7 @@ function mountSections(): void {
 describe("useActiveSection", () => {
   it("stays on top until a section intersects, preferring later ids", () => {
     mountSections();
-    const { result } = renderHook(() => useActiveSection());
+    const { result, unmount } = renderHook(() => useActiveSection());
     expect(result.current).toBe("top");
     const observer = FakeIntersectionObserver.instances[0];
     expect(observer?.rootMargin).toBe("-28% 0px -62%");
@@ -29,17 +29,22 @@ describe("useActiveSection", () => {
     expect(result.current).toBe("contact");
     act(() => observer?.trigger(false, "contact"));
     expect(result.current).toBe("about");
-    const about = document.getElementById("about");
-    observer?.unobserve(about ?? document.body);
-    observer?.disconnect();
+    act(() => observer?.trigger(false, "about"));
+    expect(result.current).toBe("tools");
+    act(() => observer?.trigger(false, "tools"));
+    expect(result.current).toBe("top");
+    unmount();
+    expect(observer?.disconnected).toBe(true);
   });
 
   it("uses the mobile root margin and ignores missing sections", () => {
     setMatchMedia({ mobile: true });
-    const { result } = renderHook(() => useActiveSection());
+    const { result, unmount } = renderHook(() => useActiveSection());
     expect(result.current).toBe("top");
     expect(FakeIntersectionObserver.instances[0]?.rootMargin).toBe("-12% 0px -55%");
     act(() => FakeIntersectionObserver.instances[0]?.trigger(false));
     expect(result.current).toBe("top");
+    unmount();
+    expect(FakeIntersectionObserver.instances[0]?.disconnected).toBe(true);
   });
 });

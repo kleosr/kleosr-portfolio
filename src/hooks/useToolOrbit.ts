@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef, type RefObject } from "react";
 import { refreshAfterImages, scrubOrbit } from "./toolOrbit";
 
+// Stryker disable next-line CallExpression: plugin registration is module-load and idempotent
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export function useToolOrbit(

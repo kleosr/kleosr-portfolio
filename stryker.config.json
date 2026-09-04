@@ -1,10 +1,9 @@
 {
   "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
   "packageManager": "pnpm",
-  "testRunner": "vitest",
-  "vitest": {
-    "configFile": "vitest.config.ts",
-    "related": true
+  "testRunner": "command",
+  "commandRunner": {
+    "command": "pnpm exec vitest run --reporter=dot"
   },
   "mutate": [
     "src/**/*.ts",
@@ -14,13 +13,14 @@
     "!src/test/**"
   ],
   "ignorePatterns": ["coverage", "dist", "reports", "public"],
-  "coverageAnalysis": "perTest",
+  "coverageAnalysis": "off",
   "thresholds": {
     "high": 100,
     "low": 100,
     "break": 100
   },
   "reporters": ["clear-text", "progress", "html"],
-  "timeoutMS": 10000,
+  "timeoutMS": 30000,
+  "concurrency": 4,
   "disableTypeChecks": true
 }
