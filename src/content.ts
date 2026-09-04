@@ -140,6 +140,10 @@ export const githubUrl = "https://github.com/kleosr";
 
 export const productPackCount = tools.length + catalog.length;
 
+export function toolAt(index: number): Tool {
+  return tools.at(index) ?? tools[0];
+}
+
 export const aboutCopy = {
   kicker: "03 / PROFILE",
   title: "About",

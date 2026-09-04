@@ -1,5 +1,5 @@
 import { useRef, useState, type CSSProperties, type ReactElement } from "react";
-import { tools, toolsCopy, type Tool } from "../content";
+import { tools, toolsCopy, toolAt, type Tool } from "../content";
 import { githubRepo, snapshotDay } from "../data/github";
 import { useToolOrbit } from "../hooks/useToolOrbit";
 import { AnimatedIcon } from "./AnimatedIcon";
@@ -53,7 +53,7 @@ export function Tools(): ReactElement {
   const sectionRef = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0);
   useToolOrbit(sectionRef, setActive);
-  const tool = tools[active] ?? tools[0];
+  const tool = toolAt(active);
 
   return (
     <section ref={sectionRef} className="section tools-section" id="tools" aria-labelledby="tools-title">

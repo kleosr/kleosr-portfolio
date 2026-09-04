@@ -8,3 +8,6 @@ dist/
 *.tsbuildinfo
 state/
 image.png
+coverage/
+reports/
+.stryker-tmp/

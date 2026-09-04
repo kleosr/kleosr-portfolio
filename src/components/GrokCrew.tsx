@@ -1,27 +1,24 @@
 import { useState, type KeyboardEvent, type ReactElement } from "react";
-import { grokAgents, grokAgentIndex, grokCopy } from "../grok-content";
+import { crewAt, grokAgents, grokAgentIndex, grokCopy } from "../grok-content";
 import { GrokBayPlate } from "./GrokBayPlate";
 import { GrokSeat } from "./GrokSeat";
 
+export function focusSeat(list: HTMLOListElement, index: number): void {
+  const button = list.querySelectorAll<HTMLButtonElement>("button")[index];
+  if (!button) return;
+  button.focus();
+}
+
 export function GrokCrew(): ReactElement {
   const [active, setActive] = useState(0);
-  const locked = grokAgents[active] ?? grokAgents[0];
+  const locked = crewAt(active);
 
   function onListKey(event: KeyboardEvent<HTMLOListElement>): void {
     const next = grokAgentIndex(active, event.key);
     if (next === null) return;
     event.preventDefault();
     setActive(next);
-    event.currentTarget.querySelectorAll<HTMLButtonElement>("button")[next]?.focus();
-  }
-
-  function onSeatKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
-    const next = grokAgentIndex(active, event.key);
-    if (next === null) return;
-    event.preventDefault();
-    setActive(next);
-    const buttons = event.currentTarget.closest("ol")?.querySelectorAll<HTMLButtonElement>("button");
-    buttons?.[next]?.focus();
+    focusSeat(event.currentTarget, next);
   }
 
   return (
@@ -39,12 +36,7 @@ export function GrokCrew(): ReactElement {
         <ol className="grok-agent-list" onKeyDown={onListKey}>
           {grokAgents.map((agent, index) => (
             <li key={agent.number} data-grok-fade="crew">
-              <GrokSeat
-                agent={agent}
-                pressed={index === active}
-                onLock={() => setActive(index)}
-                onKeyDown={onSeatKeyDown}
-              />
+              <GrokSeat agent={agent} pressed={index === active} onLock={() => setActive(index)} />
             </li>
           ))}
         </ol>

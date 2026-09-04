@@ -2,9 +2,8 @@ import type { ReactElement } from "react";
 import { proofCopy } from "../content";
 import { proofFigures } from "../data/proof";
 
-export function ProofBand(): ReactElement | null {
+export function ProofBand(): ReactElement {
   const figures = proofFigures();
-  if (figures.length === 0) return null;
 
   return (
     <section className="section proof-section" id="proof" aria-labelledby="proof-title">
