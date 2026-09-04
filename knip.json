@@ -1,0 +1,5 @@
+{
+  "ignore": ["coverage/**", "reports/**", ".stryker-tmp/**", "dist/**"],
+  "ignoreDependencies": ["puppeteer-core", "sharp"],
+  "ignoreBinaries": ["surge"]
+}

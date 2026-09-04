@@ -17,44 +17,54 @@ export type GithubSnapshot = {
   readonly repos: readonly GithubRepoRecord[];
 };
 
-function isRecord(value: unknown): value is Record<string, unknown> {
+export type JsonPrimitive = string | number | boolean | null;
+export type JsonObject = { readonly [key: string]: Json };
+export type JsonArray = readonly Json[];
+export type Json = JsonPrimitive | JsonObject | JsonArray;
+
+export function asJson(value: object): Json {
+  return value as Json;
+}
+
+function isObject(value: Json): value is JsonObject {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-function asString(value: unknown): string | null {
+function asString(value: Json | undefined): string | null {
   return typeof value === "string" ? value : null;
 }
 
-function asFinite(value: unknown): number | null {
+function asFinite(value: Json | undefined): number | null {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
 
-function nullableString(value: unknown): string | null | undefined {
+function nullableString(value: Json | undefined): string | null | undefined {
   if (value === null) return null;
   if (typeof value === "string") return value;
   return undefined;
 }
 
-function readTopics(value: unknown): readonly string[] | null {
+function readTopics(value: Json | undefined): readonly string[] | null {
   if (!Array.isArray(value)) return null;
   return value.filter((item): item is string => typeof item === "string");
 }
 
-function readCore(value: Record<string, unknown>): Omit<
-  GithubRepoRecord,
-  "description" | "language" | "license" | "topics"
-> | null {
+function readCore(
+  value: JsonObject,
+): Omit<GithubRepoRecord, "description" | "language" | "license" | "topics"> | null {
   const fullName = asString(value.fullName);
   const htmlUrl = asString(value.htmlUrl);
   const pushedAt = asString(value.pushedAt);
   const stargazersCount = asFinite(value.stargazersCount);
   const forksCount = asFinite(value.forksCount);
-  if (!fullName || !htmlUrl || !pushedAt || stargazersCount === null || forksCount === null) return null;
+  if (!fullName || !htmlUrl || !pushedAt || stargazersCount === null || forksCount === null) {
+    return null;
+  }
   return { fullName, htmlUrl, pushedAt, stargazersCount, forksCount };
 }
 
-function readRepo(value: unknown): GithubRepoRecord | null {
-  if (!isRecord(value)) return null;
+function readRepo(value: Json): GithubRepoRecord | null {
+  if (!isObject(value)) return null;
   const core = readCore(value);
   const description = nullableString(value.description);
   const language = nullableString(value.language);
@@ -66,8 +76,8 @@ function readRepo(value: unknown): GithubRepoRecord | null {
   return { ...core, description, language, license, topics };
 }
 
-function readSnapshot(value: unknown): GithubSnapshot {
-  if (!isRecord(value)) throw new Error("github.snapshot.json is not an object");
+export function readSnapshot(value: Json): GithubSnapshot {
+  if (!isObject(value)) throw new Error("github.snapshot.json is not an object");
   const fetchedAt = asString(value.fetchedAt);
   if (!fetchedAt || !Array.isArray(value.repos)) throw new Error("github.snapshot.json is incomplete");
   const repos: GithubRepoRecord[] = [];
@@ -79,7 +89,7 @@ function readSnapshot(value: unknown): GithubSnapshot {
   return { fetchedAt, repos };
 }
 
-export const githubSnapshot = readSnapshot(snapshotJson);
+export const githubSnapshot = readSnapshot(asJson(snapshotJson));
 
 export function githubRepo(fullName: string): GithubRepoRecord | undefined {
   return githubSnapshot.repos.find((repo) => repo.fullName === fullName);

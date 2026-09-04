@@ -42,9 +42,6 @@ function IconPaths({ name }: { name: IconName }): ReactElement {
         </>
       );
   }
-
-  const _exhaustive: never = name;
-  return _exhaustive;
 }
 
 export function AnimatedIcon({ name }: { name: IconName }): ReactElement {

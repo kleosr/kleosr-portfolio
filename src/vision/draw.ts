@@ -1,6 +1,6 @@
 import type { FrameOverlay } from "./types";
 
-const COLOR = "#e85a2a";
+export const OVERLAY_COLOR = "#e85a2a";
 
 function px(value: number, size: number): number {
   return value * size;
@@ -193,7 +193,7 @@ export function drawOverlay(
   if (!ctx) return;
 
   const alpha = options.alpha ?? 1;
-  const color = options.color ?? COLOR;
+  const color = options.color ?? OVERLAY_COLOR;
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   ctx.clearRect(0, 0, stageWidth, stageHeight);
   ctx.lineCap = "square";

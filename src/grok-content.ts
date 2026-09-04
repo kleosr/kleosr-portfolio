@@ -70,6 +70,10 @@ export const grokAgents: readonly GrokAgent[] = [
 
 export const crewSeatCount = grokAgents.length;
 
+export function crewAt(index: number): GrokAgent {
+  return grokAgents.at(index) ?? grokAgents[0];
+}
+
 export const grokCopy = {
   lead: `${crewSeatCount} agents behind my Cursor sessions. Each one owns a seat.`,
   crewKicker: "01 / Flight crew",
