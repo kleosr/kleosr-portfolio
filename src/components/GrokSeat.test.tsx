@@ -11,6 +11,9 @@ describe("GrokSeat", () => {
     render(<GrokSeat agent={crewAt(0)} pressed onLock={onLock} />);
     const button = screen.getByRole("button", { name: /Chief of Staff/ });
     expect(button).toHaveAttribute("aria-pressed", "true");
+    expect(button).toHaveAttribute("type", "button");
+    expect(button).toHaveClass("grok-seat");
+    expect(screen.getByText(crewAt(0).channel)).toBeInTheDocument();
     await user.click(button);
     expect(onLock).toHaveBeenCalledOnce();
   });

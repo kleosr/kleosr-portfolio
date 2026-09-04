@@ -6,6 +6,8 @@ export class FakeIntersectionObserver implements IntersectionObserver {
   readonly rootMargin: string;
   readonly thresholds: readonly number[];
   readonly callback: IoCallback;
+  disconnected = false;
+  readonly unobserved: Element[] = [];
   private readonly elements = new Set<Element>();
 
   constructor(callback: IoCallback, options?: IntersectionObserverInit) {
@@ -21,10 +23,12 @@ export class FakeIntersectionObserver implements IntersectionObserver {
   }
 
   unobserve(target: Element): void {
+    this.unobserved.push(target);
     this.elements.delete(target);
   }
 
   disconnect(): void {
+    this.disconnected = true;
     this.elements.clear();
   }
 
@@ -53,6 +57,7 @@ export class FakeIntersectionObserver implements IntersectionObserver {
 export class FakeResizeObserver implements ResizeObserver {
   static instances: FakeResizeObserver[] = [];
   readonly callback: ResizeObserverCallback;
+  disconnected = false;
   private readonly elements = new Set<Element>();
 
   constructor(callback: ResizeObserverCallback) {
@@ -69,6 +74,7 @@ export class FakeResizeObserver implements ResizeObserver {
   }
 
   disconnect(): void {
+    this.disconnected = true;
     this.elements.clear();
   }
 

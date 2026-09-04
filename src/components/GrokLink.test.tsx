@@ -8,6 +8,8 @@ describe("GrokLink", () => {
     const { rerender } = render(<GrokLink className="nav-link" />);
     const link = screen.getByRole("link", { name: "Grok Bot" });
     expect(link).toHaveAttribute("href", "/grok-bot/");
+    expect(link).toHaveClass("nav-link");
+    expect(link.querySelector(".grok-link-logo")).toBeTruthy();
     expect(link.querySelector(".grok-lockup")).toBeNull();
     rerender(<GrokLink className="nav-link nav-grok" shared />);
     expect(screen.getByRole("link", { name: "Grok Bot" }).querySelector(".grok-lockup")).toBeTruthy();
@@ -17,7 +19,12 @@ describe("GrokLink", () => {
 describe("GrokLogo", () => {
   it("accepts a class name", () => {
     const { container, rerender } = render(<GrokLogo className="mark" />);
-    expect(container.querySelector("svg.mark")).toHaveAttribute("viewBox", "0 0 32 32");
+    const svg = container.querySelector("svg.mark");
+    expect(svg).toHaveAttribute("viewBox", "0 0 32 32");
+    expect(svg).toHaveAttribute("width", "32");
+    expect(svg).toHaveAttribute("height", "32");
+    expect(svg).toHaveAttribute("aria-hidden", "true");
+    expect(svg?.innerHTML).toMatchSnapshot();
     rerender(<GrokLogo />);
     expect(container.querySelector("svg")).not.toHaveClass("mark");
   });

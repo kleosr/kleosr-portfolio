@@ -13,7 +13,7 @@ type PosterVisualProps = {
   scanline?: boolean;
 };
 
-function plateSeed(index: string): number {
+export function plateSeed(index: string): number {
   return [...index].reduce((sum, char) => sum + char.charCodeAt(0), 0);
 }
 

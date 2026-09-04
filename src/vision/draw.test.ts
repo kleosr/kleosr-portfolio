@@ -20,7 +20,10 @@ const tinyOverlay: FrameOverlay = {
     { x: 0.8, y: 0.8, kind: "square", size: 2 },
   ],
   lines: [{ ax: 0.1, ay: 0.1, bx: 0.2, by: 0.2, alpha: 0.5 }],
-  labels: [{ x: 0.1, y: 0.1, text: "IDX", align: "left" }],
+  labels: [
+    { x: 0.1, y: 0.1, text: "IDX", align: "left" },
+    { x: 0.9, y: 0.2, text: "A07", align: "right" },
+  ],
   brackets: [{ x: 0.3, y: 0.3, size: 0.02 }],
   boxes: [{ id: 1, x: 0.1, y: 0.1, width: 0.4, height: 0.4, confidence: 0.84 }],
 };
@@ -32,28 +35,21 @@ describe("drawOverlay", () => {
     expect(canvas.width).toBeGreaterThan(0);
   });
 
-  it("resizes the canvas once and paints both assist and color passes", () => {
+  it("pins the assist and color paint traces", () => {
     const { context, calls } = createRecordingContext();
     const canvas = canvasWith(context);
     window.devicePixelRatio = 3;
     drawOverlay(canvas, tinyOverlay, 200, 100, { assist: true, alpha: 0.5, color: "#12110f" });
+    expect(OVERLAY_COLOR).toBe("#e85a2a");
     expect(canvas.width).toBe(400);
     expect(canvas.height).toBe(200);
-    expect(calls.some((call) => call.op === "setTransform")).toBe(true);
-    expect(calls.some((call) => call.op === "clearRect" && call.args[2] === 200)).toBe(true);
-    expect(calls.some((call) => call.stroke === "rgba(0,0,0,0.72)")).toBe(true);
-    expect(calls.some((call) => call.stroke === "#12110f")).toBe(true);
-    expect(calls.some((call) => call.op === "arc")).toBe(true);
-    expect(calls.some((call) => call.op === "strokeRect")).toBe(true);
-    expect(calls.some((call) => call.op === "fillText" && String(call.args[0]).includes("B01"))).toBe(
-      true,
-    );
+    expect(calls).toMatchSnapshot();
     const widths = canvas.width;
     drawOverlay(canvas, tinyOverlay, 200, 100, { assist: true, color: "#12110f" });
     expect(canvas.width).toBe(widths);
   });
 
-  it("uses defaults, caps a missing devicePixelRatio, and hides overflowing labels", () => {
+  it("pins defaults, a missing devicePixelRatio, and overflowing labels", () => {
     const { context, calls } = createRecordingContext();
     const canvas = canvasWith(context);
     window.devicePixelRatio = 0;
@@ -63,6 +59,14 @@ describe("drawOverlay", () => {
     expect(calls.some((call) => call.op === "fillText" && String(call.args[0]).includes("B01"))).toBe(
       false,
     );
-    expect(calls.some((call) => call.op === "arc" && Number(call.args[2]) === 1 * 0.72)).toBe(true);
+    expect(calls).toMatchSnapshot();
+  });
+
+  it("pins a live overlay frame", () => {
+    const { context, calls } = createRecordingContext();
+    const canvas = canvasWith(context);
+    window.devicePixelRatio = 1;
+    drawOverlay(canvas, overlayAt(180, 42), 320, 200, { assist: true, alpha: 1, color: OVERLAY_COLOR });
+    expect(calls).toMatchSnapshot();
   });
 });
