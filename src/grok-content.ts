@@ -82,7 +82,7 @@ export const grokCopy = {
 } as const;
 
 export const grokPlateCopy = {
-  plate: "PLATE / GB",
+  plate: "BAY / GB",
   seat: "SEAT",
   owns: "OWNS",
   anti: "ANTI",
