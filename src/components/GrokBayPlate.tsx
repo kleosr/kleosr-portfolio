@@ -13,7 +13,7 @@ export function GrokBayPlate({ agent }: { agent: GrokAgent }): ReactElement {
         chrome="still"
         scanline
       />
-      <div className="grok-bay-brief">
+      <figcaption className="grok-bay-brief" key={agent.number}>
         <p className="grok-seat-vector">{agent.channel}</p>
         <h3>{agent.name}</h3>
         <p>{agent.role}</p>
@@ -29,7 +29,7 @@ export function GrokBayPlate({ agent }: { agent: GrokAgent }): ReactElement {
           <span>{grokPlateCopy.anti}</span>
           {` ${agent.anti}`}
         </p>
-      </div>
+      </figcaption>
     </figure>
   );
 }

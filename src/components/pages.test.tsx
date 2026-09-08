@@ -1,7 +1,7 @@
 import { act, render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { App } from "../App";
-import { crewSeatCount, grokCopy } from "../grok-content";
+import { grokCopy } from "../grok-content";
 import { GrokPage } from "./GrokPage";
 
 describe("App", () => {
@@ -44,7 +44,7 @@ describe("App", () => {
 });
 
 describe("GrokPage", () => {
-  it("renders the mission bay", async () => {
+  it("renders the grok page", async () => {
     const gsap = (await import("gsap")).default;
     const fromTo = vi.spyOn(gsap, "fromTo");
     const { container } = render(<GrokPage />);
@@ -56,15 +56,11 @@ describe("GrokPage", () => {
     );
     expect(screen.getByText(grokCopy.lead)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Back to kleosr" })).toHaveAttribute("href", "/");
-    expect(screen.getByText("[ GROK BOT / MISSION BAY ]")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "[ CREW ]" })).toHaveAttribute("href", "#crew");
-    expect(screen.getByText(`UNIT / ${String(crewSeatCount).padStart(2, "0")}`)).toBeInTheDocument();
-    expect(screen.getByText("REV 2026.08")).toBeInTheDocument();
-    expect(screen.getByText("SCOPE / SESSION")).toBeInTheDocument();
+    expect(screen.getByText("Grok Bot", { selector: ".grok-lockup span" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Crew" })).toHaveAttribute("href", "#crew");
     expect(container.querySelector(".poster-index")?.textContent).toBe("PLATE / GB");
     expect(container.querySelector(".poster-scanline")).toBeTruthy();
-    expect(screen.getByText("[ KLEOSR / GROK BOT ]")).toBeInTheDocument();
-    expect(screen.getByText("REV 2026")).toBeInTheDocument();
+    expect(screen.getByText("kleosr", { selector: ".grok-footer span" })).toBeInTheDocument();
     expect(fromTo).toHaveBeenCalled();
     fromTo.mockRestore();
   });

@@ -1,14 +1,14 @@
 Now
-Craft pass and dead-surface cleanup are ready to land on main.
+Grok Bot is one instrument: compact intro, tight rail, brief, tall still.
 
 State
-Same cream / ink / orange identity. Featured proof span, shared grok lockup transition, press/reveal tokens, unused deps and assets removed. No shadcn, beUI, or Framer Motion.
+Audit: the last grok pass left a billboard over empty black and a postage-stamp 3-up. Main site cream/poster hero stays — that is the brand, not slop. Grok fills the viewport as rail | brief | still. No shadcn install.
 
 Limits
-Do not invent a second aesthetic. Do not lower Stryker 100. Browser never calls api.github.com. `dist/CNAME` stays untracked.
+Do not invent a second aesthetic. Do not lower Stryker 100. Browser never calls api.github.com.
 
 Proof
-`#proof` featured span, Tools nav underline, `/grok-bot/` CTO lock checked in browser.
+Vitest 4 files / 10 tests. Desktop stage `brief still`, poster 773px, CTO lock works.
 
 Next
-Hard-refresh after deploy. `pnpm coverage && pnpm metrics && pnpm mutate` if landing the full quality bar.
+Hard-refresh after deploy.
