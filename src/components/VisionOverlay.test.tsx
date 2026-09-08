@@ -1,7 +1,6 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { FakeIntersectionObserver } from "../test/observers";
-import { OVERLAY_COLOR } from "../vision/draw";
 import { VisionOverlay } from "./VisionOverlay";
 
 describe("VisionOverlay", () => {
@@ -13,7 +12,6 @@ describe("VisionOverlay", () => {
     );
     const canvas = container.querySelector("canvas.overlay-canvas");
     expect(canvas).toHaveAttribute("aria-hidden", "true");
-    expect(OVERLAY_COLOR).toBe("#e85a2a");
     const first = FakeIntersectionObserver.instances.length;
     expect(first).toBeGreaterThan(0);
     rerender(

@@ -76,16 +76,19 @@
 .tool-catalog-row {
   display: grid;
   min-height: 44px;
-  padding: 1rem 0;
+  padding: 1rem 0.35rem;
+  margin-inline: -0.35rem;
   grid-template-columns: 2rem minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.85rem 1.25rem;
   border-bottom: 1px solid var(--line-light);
-  transition: transform var(--duration) var(--ease);
+  transition:
+    transform var(--duration-press) var(--ease),
+    background-color var(--duration) var(--ease);
 }
 
 .tool-catalog-row:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
 .tool-catalog-index,
@@ -165,9 +168,38 @@
   list-style: none;
 }
 
+@media (min-width: 40rem) {
+  .proof-figures {
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.55fr);
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .proof-figure:first-child {
+    grid-row: 1 / -1;
+    padding: 2rem 1.75rem 1.75rem;
+  }
+
+  .proof-figure:not(:first-child) {
+    padding: 1.15rem 1.25rem;
+  }
+}
+
 .proof-figure {
   padding: 1.5rem 1.25rem 1.35rem;
   background: var(--ink);
+}
+
+.proof-figure:first-child {
+  background: #161412;
+}
+
+.proof-figure:first-child data {
+  font-size: clamp(3.5rem, 11vw, 6.5rem);
+}
+
+.proof-figure:not(:first-child) data {
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  color: var(--muted-light);
 }
 
 .proof-figure p {
@@ -202,7 +234,16 @@
     color: var(--orange);
   }
 
+  .tool-catalog-row:hover {
+    background: rgb(232 90 42 / 8%);
+    box-shadow: inset 0 0 0 1px var(--hairline-cream);
+  }
+
   .tool-catalog-row:hover strong {
+    color: var(--cream);
+  }
+
+  .tool-catalog-row:hover data {
     color: var(--orange);
   }
 }

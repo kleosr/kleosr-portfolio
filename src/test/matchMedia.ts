@@ -1,4 +1,4 @@
-export type MatchMediaFlags = {
+type MatchMediaFlags = {
   reduced?: boolean;
   mobile?: boolean;
 };
