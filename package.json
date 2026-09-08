@@ -43,8 +43,6 @@
     "eslint-plugin-sonarjs": "^4.2.0",
     "jsdom": "^30.0.1",
     "knip": "^6.34.0",
-    "puppeteer-core": "^25.8.0",
-    "sharp": "^0.35.4",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.68.0",
     "vite": "^8.2.2",

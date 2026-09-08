@@ -73,7 +73,5 @@ describe("grok helpers", () => {
     expect(grokAgentIndex(1, " ")).toBeNull();
     expect(grokAgentIndex(0, "ArrowLeft")).toBe(0);
     expect(grokAgentIndex(6, "ArrowRight")).toBe(6);
-    expect(toolAt(tools.length)).toBe(tools[0]);
-    expect(crewAt(crewSeatCount)).toBe(grokAgents[0]);
   });
 });

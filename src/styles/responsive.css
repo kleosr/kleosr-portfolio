@@ -74,10 +74,6 @@
   .tool-orbit {
     margin-left: -16%;
   }
-
-  .proof-figures {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 @media (min-width: 64rem) {

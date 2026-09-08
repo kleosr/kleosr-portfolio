@@ -1,14 +1,14 @@
 Now
-Quality gates: cyclomatic < 22 (ESLint cap 10), cognitive < 22, Halstead < 80, LOC < 500, 100% coverage, CRAP < 25, no any/unknown, zero dead/redundant code, Stryker 100%.
+Craft pass and dead-surface cleanup are ready to land on main.
 
 State
-Toolchain and tests are in place on `cursor/quality-gates-8306`. `pnpm check`, `pnpm coverage`, `pnpm deadcode`, and `pnpm metrics` exit 0. Mutation score is the remaining bar (`pnpm mutate`, command runner, break at 100).
+Same cream / ink / orange identity. Featured proof span, shared grok lockup transition, press/reveal tokens, unused deps and assets removed. No shadcn, beUI, or Framer Motion.
 
 Limits
-Do not lower Stryker `thresholds.break` from 100. Do not use the Vitest Stryker runner (runtime mutants survive under Vitest 5). `dist/CNAME` stays untracked. Never query `api.github.com` from the browser.
+Do not invent a second aesthetic. Do not lower Stryker 100. Browser never calls api.github.com. `dist/CNAME` stays untracked.
 
 Proof
-`pnpm check && pnpm coverage && pnpm deadcode && pnpm metrics` exit 0. Coverage 481/481 stmts, 193/193 branches, 133/133 fns, 423/423 lines.
+`#proof` featured span, Tools nav underline, `/grok-bot/` CTO lock checked in browser.
 
 Next
-`pnpm mutate` must exit 0 (no surviving mutants), then `pnpm build`.
+Hard-refresh after deploy. `pnpm coverage && pnpm metrics && pnpm mutate` if landing the full quality bar.

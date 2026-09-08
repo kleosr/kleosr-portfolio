@@ -149,7 +149,7 @@ function fillLabels(
   }
 }
 
-export type DrawOptions = {
+type DrawOptions = {
   alpha?: number;
   color?: string;
   assist?: boolean;

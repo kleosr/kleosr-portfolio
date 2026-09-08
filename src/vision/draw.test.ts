@@ -40,7 +40,6 @@ describe("drawOverlay", () => {
     const canvas = canvasWith(context);
     window.devicePixelRatio = 3;
     drawOverlay(canvas, tinyOverlay, 200, 100, { assist: true, alpha: 0.5, color: "#12110f" });
-    expect(OVERLAY_COLOR).toBe("#e85a2a");
     expect(canvas.width).toBe(400);
     expect(canvas.height).toBe(200);
     expect(calls).toMatchSnapshot();

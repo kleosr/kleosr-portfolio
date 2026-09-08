@@ -109,19 +109,21 @@ export const catalog: readonly CatalogPack[] = [
   },
 ];
 
+const snapshotKicker = "GH / SNAPSHOT";
+
 export const toolsCopy = {
   kicker: "01 / INDEX",
   title: "Tools",
   code: `KLSR.PUBLIC_WORK / ${String(tools.length).padStart(4, "0")}`,
   openSource: "Open source",
   stars: "stars",
-  snapshotKicker: "GH / SNAPSHOT",
+  snapshotKicker,
 } as const;
 
 export const catalogCopy = {
   kicker: `CATALOG / ${String(catalog.length).padStart(4, "0")}`,
   title: "Index",
-  snapshotKicker: "GH / SNAPSHOT",
+  snapshotKicker,
 } as const;
 
 export const proofCopy = {
@@ -131,7 +133,7 @@ export const proofCopy = {
   featuredStars: "Featured stars",
   packs: "Public packs",
   seats: "Crew seats",
-  snapshotKicker: "GH / SNAPSHOT",
+  snapshotKicker,
   packsKicker: "PACKS / LIST",
   seatsKicker: "GROK / CONTENT",
 } as const;
