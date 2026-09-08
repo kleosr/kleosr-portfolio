@@ -56,12 +56,12 @@ describe("useGrokMotion", () => {
     const heroFrom = fromTo.mock.calls[0]?.[1];
     const heroTo = fromTo.mock.calls[0]?.[2];
     const crewTo = fromTo.mock.calls[1]?.[2];
-    expect(heroFrom).toEqual({ autoAlpha: 0, y: 20 });
+    expect(heroFrom).toEqual({ autoAlpha: 0, y: 8 });
     if (!heroTo || typeof heroTo === "number") throw new Error("hero tween missing");
     if (!crewTo || typeof crewTo === "number") throw new Error("crew tween missing");
     expect(heroTo.autoAlpha).toBe(1);
     expect(heroTo.y).toBe(0);
-    expect(heroTo.duration).toBe(0.3);
+    expect(heroTo.duration).toBe(0.22);
     expect(heroTo.stagger).toBe(0.07);
     expect(heroTo.ease).toBe("power3.out");
     expect(heroTo.immediateRender).toBe(true);

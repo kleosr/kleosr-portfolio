@@ -10,11 +10,11 @@ function fadeIn(targets: HTMLElement[], trigger?: HTMLElement | null): void {
   if (!targets.length) return;
   gsap.fromTo(
     targets,
-    { autoAlpha: 0, y: 20 },
+    { autoAlpha: 0, y: 8 },
     {
       autoAlpha: 1,
       y: 0,
-      duration: 0.3,
+      duration: 0.22,
       stagger: 0.07,
       ease: "power3.out",
       immediateRender: !trigger,
