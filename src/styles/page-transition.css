@@ -7,7 +7,14 @@ html {
 }
 
 .grok-lockup {
-  view-transition-name: none;
+  view-transition-name: grok-lockup;
+  contain: layout;
+}
+
+::view-transition-group(grok-lockup) {
+  z-index: 1;
+  animation-duration: 220ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 ::view-transition-image-pair(root) {
@@ -17,8 +24,8 @@ html {
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 350ms;
-  animation-timing-function: cubic-bezier(0.22, 0.8, 0.22, 1);
+  animation-duration: 220ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   animation-fill-mode: both;
   mix-blend-mode: normal;
 }
@@ -34,20 +41,39 @@ html {
 @keyframes page-out {
   to {
     opacity: 0;
-    filter: brightness(0.55);
+    transform: translateX(-2.25%);
   }
 }
 
 @keyframes page-in {
   from {
     opacity: 0;
-    filter: brightness(0.7);
+    transform: translateX(2.25%);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(root),
+  ::view-transition-old(root) {
+    animation-name: page-fade-out;
+    animation-duration: 180ms;
+  }
+
   ::view-transition-new(root) {
-    animation: none;
+    animation-name: page-fade-in;
+    animation-duration: 180ms;
+  }
+}
+
+@keyframes page-fade-out {
+  to {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: none;
   }
 }
