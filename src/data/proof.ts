@@ -2,7 +2,7 @@ import { productPackCount, proofCopy, tools } from "../content";
 import { crewSeatCount } from "../grok-content";
 import * as github from "./github";
 
-export type ProofFigure = {
+type ProofFigure = {
   label: string;
   value: number;
   kicker: string;
