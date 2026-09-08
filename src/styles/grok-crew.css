@@ -11,8 +11,7 @@
   margin-bottom: 1.25rem;
 }
 
-.grok-crew header p,
-.grok-lock {
+.grok-crew header p {
   margin: 0;
   color: var(--orange);
   font: 600 var(--type-kicker)/1 var(--mono);
@@ -34,22 +33,6 @@
   font-size: 0.9375rem;
 }
 
-.grok-lock {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 0 1.5rem;
-  align-items: baseline;
-  gap: 0.65rem 1rem;
-  color: var(--cream);
-}
-
-.grok-lock span { color: var(--orange); }
-
-.grok-lock strong {
-  font-weight: 600;
-  letter-spacing: 0.08em;
-}
-
 .grok-bay-split {
   display: grid;
   gap: 1.5rem;
@@ -69,16 +52,6 @@
 .grok-bay .poster-visual {
   height: 100%;
   max-height: min(72vh, 36rem);
-}
-
-.grok-bay.grok-frame figcaption {
-  top: 0.65rem;
-  right: 0.65rem;
-  bottom: auto;
-  left: 0.65rem;
-  display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
 }
 
 .grok-bay-brief {
@@ -173,7 +146,11 @@
   color: inherit;
   text-align: left;
   cursor: pointer;
-  transition: transform var(--duration) var(--ease);
+  transition:
+    transform var(--duration-press) var(--ease),
+    background-color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease);
 }
 
 .grok-seat-index {
@@ -226,6 +203,7 @@
 
 .grok-seat[aria-pressed="true"] {
   border-left-color: var(--orange);
+  background: rgb(232 90 42 / 8%);
   box-shadow: inset 2px 0 0 var(--orange);
 }
 
@@ -239,10 +217,15 @@
   outline-offset: 2px;
 }
 
-.grok-seat:active {
-  transform: scale(0.98);
-}
-
 @media (hover: hover) and (pointer: fine) {
+  .grok-seat:hover {
+    background: rgb(232 90 42 / 8%);
+    box-shadow: inset 0 0 0 1px var(--hairline-cream);
+  }
+
+  .grok-seat[aria-pressed="true"]:hover {
+    box-shadow: inset 2px 0 0 var(--orange);
+  }
+
   .grok-seat:hover strong { color: var(--cream); }
 }

@@ -16,8 +16,7 @@
     font-size: clamp(2.75rem, 5.2vw, var(--type-display));
   }
 
-  .grok-crew header,
-  .grok-lock {
+  .grok-crew header {
     max-width: none;
   }
 

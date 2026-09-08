@@ -1,5 +1,5 @@
 type TraceValue = string | number | boolean | null;
-export type TraceCall = {
+type TraceCall = {
   readonly op: string;
   readonly args: readonly TraceValue[];
   readonly alpha: number;

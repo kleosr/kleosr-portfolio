@@ -1,6 +1,6 @@
 import snapshotJson from "./github.snapshot.json";
 
-export type GithubRepoRecord = {
+type GithubRepoRecord = {
   readonly fullName: string;
   readonly description: string | null;
   readonly htmlUrl: string;
@@ -12,7 +12,7 @@ export type GithubRepoRecord = {
   readonly topics: readonly string[];
 };
 
-export type GithubSnapshot = {
+type GithubSnapshot = {
   readonly fetchedAt: string;
   readonly repos: readonly GithubRepoRecord[];
 };
