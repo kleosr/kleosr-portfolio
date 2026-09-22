@@ -1,0 +1,101 @@
+.animated-icon {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.tool-title {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.tool-title > .animated-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: var(--orange);
+}
+
+.animated-icon path,
+.animated-icon circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    transform var(--duration) var(--ease),
+    opacity var(--duration) var(--ease),
+    stroke-dashoffset var(--duration) var(--ease);
+}
+
+.icon-arrow-line,
+.icon-arrow-head {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 0;
+}
+
+.contact-copy a:active .icon-arrow-line,
+.contact-copy a:focus-visible .icon-arrow-line {
+  transform: translateX(2px);
+}
+
+.contact-copy a:active .icon-arrow-head,
+.contact-copy a:focus-visible .icon-arrow-head {
+  transform: translateX(3px);
+}
+
+.tool-orbit-card:focus-visible {
+  border-color: var(--orange);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contact-copy a:hover .icon-arrow-line {
+    transform: translateX(2px);
+  }
+
+  .contact-copy a:hover .icon-arrow-head {
+    transform: translateX(3px);
+  }
+
+  .tool-title:hover .animated-icon-shield .icon-spine {
+    transform: translateY(1px);
+  }
+
+  .tool-title:hover .animated-icon-memory .icon-back {
+    transform: translate(-1px, 1px);
+  }
+
+  .tool-title:hover .animated-icon-verify .icon-beam {
+    transform: rotate(6deg);
+  }
+}
+
+.poster-agent i {
+  transform-origin: left;
+  animation: agent-signal 2.8s var(--ease) infinite;
+}
+
+.poster-code span {
+  transition: transform var(--duration) var(--ease);
+}
+
+.contact-copy .animated-icon {
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  margin-left: 0.15em;
+  vertical-align: -0.02em;
+}
+
+@keyframes agent-signal {
+  0%,
+  100% {
+    transform: scaleX(0.22);
+  }
+
+  55% {
+    transform: scaleX(1);
+  }
+}

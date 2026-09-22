@@ -1,0 +1,3 @@
+{
+  "ignoreDependencies": ["@stryker-mutator/command-runner"]
+}

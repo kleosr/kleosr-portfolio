@@ -1,0 +1,39 @@
+.grok-frame {
+  position: relative;
+  max-width: 100%;
+}
+
+.grok-bay .poster-visual {
+  border: 1px solid var(--hairline-cream);
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+  aspect-ratio: 4 / 5;
+}
+
+.grok-bay .poster-visual::before,
+.grok-bay .poster-visual::after {
+  display: none;
+}
+
+.grok-bay .poster-index,
+.grok-bay .poster-meta {
+  transform: none;
+  background: transparent;
+  padding: 0;
+  color: rgb(244 236 217 / 42%);
+  font: 500 var(--type-kicker)/1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.grok-bay .poster-index {
+  top: auto;
+  right: auto;
+  bottom: 0.65rem;
+  left: 0.75rem;
+}
+
+.grok-bay .poster-meta {
+  top: 0.65rem;
+  right: 0.65rem;
+}

@@ -1,0 +1,88 @@
+@media (min-width: 60rem) {
+  .grok-nav,
+  .grok-hero,
+  .grok-crew,
+  .grok-footer {
+    padding-right: max(3rem, calc((100vw - 88rem) / 2));
+    padding-left: max(3rem, calc((100vw - 88rem) / 2));
+  }
+
+  .grok-hero {
+    max-width: none;
+    padding-top: 2rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .grok-hero h1 {
+    max-width: 36ch;
+  }
+
+  .grok-lead {
+    max-width: 40rem;
+  }
+
+  .grok-bay-split {
+    grid-template-columns: 16.5rem minmax(0, 1fr);
+    grid-template-areas: "rail stage";
+    align-items: stretch;
+    gap: 2.5rem;
+  }
+
+  .grok-bay {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem);
+    grid-template-areas: "brief still";
+    align-items: stretch;
+    gap: 2.5rem;
+    height: 100%;
+  }
+
+  .grok-bay .poster-visual {
+    height: 100%;
+    max-height: none;
+    min-height: 22rem;
+  }
+
+  .grok-bay-brief {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .grok-agent-list {
+    align-self: start;
+  }
+
+  .grok-seat p {
+    display: none;
+  }
+}
+
+@media (max-width: 59.99rem) {
+  .grok-hero {
+    padding-top: 1.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .grok-hero h1 {
+    font-size: clamp(1.45rem, 7vw, 1.85rem);
+    overflow-wrap: break-word;
+  }
+
+  .grok-mark span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 39.99rem) {
+  .grok-nav {
+    min-height: 3.5rem;
+  }
+
+  .grok-nav .grok-mark span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+}

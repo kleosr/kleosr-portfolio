@@ -1,0 +1,250 @@
+.section.about-section,
+.section.contact-section {
+  width: 100%;
+  max-width: none;
+}
+
+.about-section {
+  display: flex;
+  overflow: hidden;
+  min-height: 100svh;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.about-section::before {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H120M0 0V120M60 0V120M0 60H120' stroke='%2312110f' stroke-opacity='.055' fill='none'/%3E%3C/svg%3E");
+  content: "";
+  pointer-events: none;
+}
+
+.about-section .section-heading,
+.about-body {
+  position: relative;
+  z-index: 1;
+}
+
+.about-section .section-code {
+  color: var(--muted-dark);
+}
+
+.about-body {
+  display: grid;
+  gap: 3rem;
+}
+
+.about-spec {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  min-height: 24rem;
+  padding: 1.25rem;
+  place-items: center;
+  border: 1px solid var(--line-dark);
+  background: var(--orange);
+  color: var(--black);
+}
+
+.about-spec::before,
+.about-spec::after {
+  position: absolute;
+  border: 1px solid rgb(9 9 9 / 45%);
+  border-radius: 50%;
+  content: "";
+}
+
+.about-spec::before {
+  width: 74%;
+  aspect-ratio: 1;
+}
+
+.about-spec::after {
+  width: 45%;
+  aspect-ratio: 1;
+}
+
+.about-spec > span {
+  position: absolute;
+  z-index: 4;
+  top: 1.25rem;
+  left: 1.25rem;
+  font: 600 0.55rem/1 var(--mono);
+  letter-spacing: 0.08em;
+}
+
+.about-spec strong {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(9rem, 34vw, 18rem);
+  font-weight: 600;
+  line-height: 0.7;
+  letter-spacing: -0.1em;
+}
+
+.about-spec i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgb(9 9 9 / 45%);
+}
+
+.about-spec small {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  font: 500 0.5rem/1.5 var(--mono);
+  letter-spacing: 0.12em;
+  text-align: right;
+}
+
+.about-copy {
+  min-width: 0;
+  max-width: 55rem;
+  margin-left: auto;
+  overflow-wrap: break-word;
+}
+
+.about-copy p {
+  margin: 0 0 1.25rem;
+  color: var(--muted-dark);
+  font-size: var(--type-body);
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+}
+
+.about-copy p:nth-child(2) {
+  color: var(--ink);
+  font-size: var(--type-lead);
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+}
+
+.about-type {
+  min-height: 1.4em;
+  color: var(--ink);
+  font-size: var(--type-lead);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+}
+
+.about-type.is-typing::after {
+  display: inline-block;
+  width: 0.08em;
+  height: 0.85em;
+  margin-left: 0.12em;
+  background: var(--orange);
+  vertical-align: -0.05em;
+  content: "";
+}
+
+.contact-section {
+  display: grid;
+  align-content: start;
+  background: var(--orange);
+  color: var(--black);
+}
+
+.contact-section::before {
+  position: absolute;
+  right: 5%;
+  bottom: 8%;
+  width: min(44rem, 70vw);
+  aspect-ratio: 1;
+  border: 1px solid rgb(9 9 9 / 30%);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 4rem rgb(9 9 9 / 4%),
+    0 0 0 8rem rgb(9 9 9 / 4%);
+  content: "";
+  pointer-events: none;
+}
+
+.contact-section .section-heading,
+.contact-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-section .section-heading > p,
+.contact-section .section-code {
+  color: rgb(9 9 9 / 58%);
+}
+
+.contact-copy {
+  min-width: 0;
+  max-width: 62rem;
+  margin: auto 0 0 auto;
+  padding-top: 6rem;
+  overflow-wrap: break-word;
+  font-size: var(--type-display);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  text-wrap: balance;
+}
+
+.contact-github {
+  display: inline-flex;
+  min-height: 44px;
+  padding: 0.25rem 0.5rem;
+  margin: -0.25rem -0.5rem;
+  border-radius: var(--radius-md);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.4rem;
+  color: var(--ink);
+  vertical-align: bottom;
+  transition: transform var(--duration) var(--ease);
+}
+
+.contact-github:active {
+  transform: scale(0.98);
+}
+
+.contact-github:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 2px;
+}
+
+.contact-github small {
+  color: rgb(9 9 9 / 58%);
+  font: 600 0.52rem/1 var(--mono);
+  letter-spacing: 0.12em;
+}
+
+.contact-github span {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.contact-github span::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.12em;
+  left: 0;
+  height: 0.06em;
+  background: var(--ink);
+  content: "";
+  transform-origin: left;
+  transition: background var(--duration) var(--ease);
+}
+
+.contact-github:active span::after,
+.contact-github:focus-visible span::after {
+  background: var(--cream);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contact-github:hover span::after {
+    background: var(--cream);
+  }
+}
